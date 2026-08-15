@@ -17,7 +17,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-base)]/95 backdrop-blur-sm">
       <Container size="wide">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Official Logo — wordmark is included inside the image asset */}
           <Link
             href="/"
@@ -29,7 +29,7 @@ export function SiteHeader() {
               alt="the koral collective"
               width={120}
               height={120}
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
               priority
               unoptimized
             />
