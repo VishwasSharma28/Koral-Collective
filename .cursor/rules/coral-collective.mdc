@@ -1,0 +1,61 @@
+---
+description: Coral Collective project standards — docs are source of truth; frontend-only MVP; no payment/auth/backend
+alwaysApply: true
+---
+
+# Coral Collective — Project Rules
+
+## Source of Truth
+
+Treat these documents as authoritative product and design specification:
+
+- `docs/PRD.md`
+- `docs/MVP.md`
+- `docs/USER_FLOW.md`
+- `docs/DESIGN_DIRECTION.md`
+
+**Never invent product requirements.** If something is unspecified, ask or propose options — do not silently add features.
+
+## Scope Constraints (MVP)
+
+- **No payment system** — no Stripe, Razorpay, checkout, or pricing purchase flows
+- **No authentication** — no login, signup, OAuth, or user sessions
+- **No unnecessary backend** — no database, API server, or infra unless strictly required for a minimal static deploy
+- **No complex CMS** — content via static files (JSON, Markdown, TypeScript modules)
+
+## Architecture Preferences
+
+- **React + TypeScript** with reusable components
+- **Separate content/data from presentation** — experiences, team, gallery, resources live in data layer
+- **Isolate animation logic** — hero scroll and circular explorer in dedicated hooks/modules
+- **Do not hardcode individual experience cards** into presentation components — drive from content schema
+- **Prefer static generation** (SSG) for deployability
+
+## Implementation Discipline
+
+- **Responsive first** — mobile, tablet, desktop; touch and keyboard usable
+- **Performance** — lazy load media, code-split heavy animation, respect `prefers-reduced-motion`
+- **Smallest safe change** — do not rewrite unrelated files
+- **Preserve working functionality** — avoid drive-by refactors
+- **Before major work** — explain intended approach aligned with docs
+- **After implementation** — run build, typecheck, and tests if available
+- **Never claim something works** without verifying it
+
+## Core User Journey (Do Not Break)
+
+```
+Entry → hero scroll transition → Home → select offering
+  → rotating circular explorer → select experience → detail → contact (e.g. WhatsApp)
+```
+
+## Navigation
+
+Global nav: **Home | About | Team | Gallery | Resources**
+
+## Design
+
+Follow `docs/DESIGN_DIRECTION.md`. Reference videos are inspiration for interactions only — do not clone their visual identity. Coral Collective owns its own colors, typography, imagery, and branding.
+
+## When Unsure
+
+Read the docs first. Escalate gaps via open questions in PRD or ask the user — do not guess requirements.
