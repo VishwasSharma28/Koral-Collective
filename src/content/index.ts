@@ -3,8 +3,18 @@ import { experiences } from "./experiences";
 import { galleryContent } from "./gallery";
 import { offerings } from "./offerings";
 import { resourcesContent } from "./resources";
+import { siteConfig, navItems } from "./site";
 import { teamContent } from "./team";
+import { testimonialsContent } from "./testimonials";
 import type { Experience, Offering } from "./types";
+
+export function getSiteConfig() {
+  return siteConfig;
+}
+
+export function getNavItems() {
+  return navItems;
+}
 
 export function getAllOfferings(): Offering[] {
   return offerings;
@@ -61,4 +71,18 @@ export function getResourcesContent() {
   return resourcesContent;
 }
 
-export { aboutContent, experiences, galleryContent, offerings, resourcesContent, teamContent };
+export function getTestimonialsContent() {
+  return testimonialsContent;
+}
+
+export {
+  aboutContent,
+  experiences,
+  galleryContent,
+  navItems,
+  offerings,
+  resourcesContent,
+  siteConfig,
+  teamContent,
+  testimonialsContent,
+};

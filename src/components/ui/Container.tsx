@@ -5,8 +5,20 @@ import { cn } from "@/lib/cn";
 type ContainerProps = {
   children: ReactNode;
   className?: string;
+  size?: "narrow" | "default" | "wide" | "full";
 };
 
-export function Container({ children, className }: ContainerProps) {
-  return <div className={cn("mx-auto max-w-5xl px-4", className)}>{children}</div>;
+const sizeClasses = {
+  narrow: "max-w-4xl",
+  default: "max-w-6xl",
+  wide: "max-w-7xl",
+  full: "max-w-full",
+};
+
+export function Container({ children, className, size = "wide" }: ContainerProps) {
+  return (
+    <div className={cn("mx-auto px-4 sm:px-6 lg:px-8", sizeClasses[size], className)}>
+      {children}
+    </div>
+  );
 }

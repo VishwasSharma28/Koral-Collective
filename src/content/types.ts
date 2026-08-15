@@ -96,3 +96,16 @@ export type ResourcesContent = {
   links: ResourceLink[];
   seo: SeoFields;
 };
+
+export type Testimonial = {
+  id: string;
+  quote: string;
+  author: string;
+  roleOrLocation?: string;
+};
+
+export type TestimonialsContent = {
+  title: string;
+  items: Testimonial[];
+};
+
