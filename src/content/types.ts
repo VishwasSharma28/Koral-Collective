@@ -49,8 +49,11 @@ export type Experience = {
   duration?: string;
   format?: string;
   highlights: string[];
+  /** Optional custom WhatsApp pre-filled message. Falls back to a generated default. */
+  contactMessage?: string;
   seo: SeoFields;
 };
+
 
 export type AboutContent = {
   title: string;

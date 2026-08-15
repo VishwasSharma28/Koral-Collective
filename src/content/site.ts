@@ -1,12 +1,12 @@
 import type { NavItem, SiteConfig } from "./types";
 
 export const siteConfig: SiteConfig = {
-  name: "Coral Collective",
+  name: "Koral Collective",
   tagline: "Tulunadu storytelling and experiential culture",
   contact: {
     whatsapp: {
       phoneE164: "0000000000",
-      defaultMessage: "Hello Coral Collective, I would like to enquire.",
+      defaultMessage: "Hello Koral Collective, I would like to enquire.",
     },
     email: "hello@example.com",
   },
