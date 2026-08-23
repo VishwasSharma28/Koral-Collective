@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { getSiteConfig } from "@/content";
 import { HeroSkipButton } from "./HeroSkipButton";
 
@@ -16,11 +17,11 @@ export function HeroStage({ progress, isReducedMotion, onSkip }: HeroStageProps)
   const portalRadius = isReducedMotion ? 150 : 18 + progress * 132; // 18% to 150%
   const imageScale = isReducedMotion ? 1 : 1 + progress * 0.12;
   const overlayOpacity = isReducedMotion ? 0.3 : Math.max(0.15, 0.65 - progress * 0.5);
-  
+
   // Title scaling and positioning
   const titleScale = isReducedMotion ? 1 : 1.15 - progress * 0.15;
   const titleY = isReducedMotion ? 0 : -progress * 24; // subtle lift up
-  
+
   // Tagline & story reveal timing (starts fading in around progress 0.3)
   const revealOpacity = isReducedMotion ? 1 : Math.max(0, Math.min(1, (progress - 0.25) / 0.5));
   const revealY = isReducedMotion ? 0 : 20 * (1 - revealOpacity);
@@ -37,17 +38,25 @@ export function HeroStage({ progress, isReducedMotion, onSkip }: HeroStageProps)
           clipPath: `circle(${portalRadius}% at 50% 50%)`,
         }}
       >
-        {/* Placeholder Atmospheric Coastal Graphic Composition */}
+        {/* Atmospheric Coastal Graphic Composition */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#1b2b25] via-[#2d3732] to-[#3a4f45] transition-transform duration-100 ease-out"
+          className="absolute inset-0 bg-black transition-transform duration-100 ease-out"
           style={{
             transform: `scale(${imageScale})`,
           }}
         >
+          <Image
+            src="/images/hero/tulunadu-coastal-hero.webp"
+            alt="Koral Collective Tulunadu Experience"
+            fill
+            priority
+            unoptimized
+            className="object-cover opacity-80"
+          />
           {/* Decorative subtle texture/gradient rings */}
-          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-200 via-transparent to-transparent" />
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-200 via-transparent to-transparent pointer-events-none" />
           <div
-            className="absolute inset-0 opacity-15"
+            className="absolute inset-0 opacity-15 pointer-events-none"
             style={{
               backgroundImage:
                 "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 1px)",
@@ -59,7 +68,7 @@ export function HeroStage({ progress, isReducedMotion, onSkip }: HeroStageProps)
 
       {/* Dimmed Overlay Scrim */}
       <div
-        className="absolute inset-0 bg-[var(--color-brand-primary)] pointer-events-none transition-opacity duration-75"
+        className="absolute inset-0 bg-black pointer-events-none transition-opacity duration-75"
         style={{ opacity: overlayOpacity }}
       />
 

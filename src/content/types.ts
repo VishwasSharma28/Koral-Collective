@@ -35,6 +35,7 @@ export type Offering = {
   title: string;
   shortDescription: string;
   description: string;
+  images?: string[];
   experienceIds: string[];
   seo: SeoFields;
 };
@@ -48,6 +49,8 @@ export type Experience = {
   description: string;
   duration?: string;
   format?: string;
+  images: string[];
+  details: string[];
   highlights: string[];
   /** Optional custom WhatsApp pre-filled message. Falls back to a generated default. */
   contactMessage?: string;

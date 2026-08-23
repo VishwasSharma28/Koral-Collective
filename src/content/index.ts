@@ -1,6 +1,5 @@
 import { aboutContent } from "./about";
 import { experiences } from "./experiences";
-import { galleryContent } from "./gallery";
 import { offerings } from "./offerings";
 import { resourcesContent } from "./resources";
 import { siteConfig, navItems } from "./site";
@@ -63,10 +62,6 @@ export function getTeamContent() {
   return teamContent;
 }
 
-export function getGalleryContent() {
-  return galleryContent;
-}
-
 export function getResourcesContent() {
   return resourcesContent;
 }
@@ -78,7 +73,6 @@ export function getTestimonialsContent() {
 export {
   aboutContent,
   experiences,
-  galleryContent,
   navItems,
   offerings,
   resourcesContent,

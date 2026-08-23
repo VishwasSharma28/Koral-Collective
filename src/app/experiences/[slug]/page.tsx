@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { Container } from "@/components/ui/Container";
@@ -62,11 +63,24 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
     <article>
       {/* ── Hero Strip ──────────────────────────────────────────── */}
       <div className="relative w-full overflow-hidden bg-[var(--color-brand-primary)]">
-        {/* Atmospheric placeholder background – will be replaced with real imagery */}
-        <div
-          className="absolute inset-0 bg-gradient-to-br from-[#1b2b25] via-[#2d3a30] to-[#4a5e50] opacity-90"
-          aria-hidden="true"
-        />
+        {experience.images?.[0] ? (
+          <div className="absolute inset-0">
+            <Image
+              src={experience.images[0]}
+              alt={experience.title}
+              fill
+              className="object-cover opacity-60"
+              priority
+              unoptimized
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
+          </div>
+        ) : (
+          <div
+            className="absolute inset-0 bg-gradient-to-br from-[#1b2b25] via-[#2d3a30] to-[#4a5e50] opacity-90"
+            aria-hidden="true"
+          />
+        )}
         {/* Subtle texture layer */}
         <div
           className="absolute inset-0 opacity-10"
@@ -151,7 +165,24 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
               <p className="text-base leading-relaxed text-[var(--color-text-primary)] sm:text-lg">
                 {experience.description}
               </p>
+
+              {experience.details && experience.details.length > 0 && (
+                <div className="mt-8 space-y-4 border-l-2 border-[var(--color-border-subtle)] pl-6 py-2">
+                  {experience.details.map((detail, idx) => (
+                    <p key={idx} className="text-sm text-[var(--color-text-muted)] leading-relaxed font-serif italic">
+                      {detail}
+                    </p>
+                  ))}
+                </div>
+              )}
             </section>
+
+            {/* Secondary Image Support */}
+            {experience.images?.[1] && (
+              <figure className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[var(--radius-lg)] overflow-hidden border border-[var(--color-border-subtle)] shadow-sm">
+                <Image src={experience.images[1]} fill alt="" className="object-cover" unoptimized />
+              </figure>
+            )}
 
             {/* Highlights */}
             {experience.highlights.length > 0 && (

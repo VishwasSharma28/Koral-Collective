@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import type { Experience } from "@/content/types";
 import { cn } from "@/lib/cn";
@@ -18,71 +19,99 @@ export function ExplorerCard({ experience, geometry, onFocusCard }: ExplorerCard
   const cardContent = (
     <article
       className={cn(
-        "relative flex h-[380px] w-[280px] sm:w-[320px] flex-col justify-between rounded-[var(--radius-lg)] p-6 transition-all duration-200 shadow-lg text-left select-none",
+        "relative flex h-[380px] w-[280px] sm:w-[320px] flex-col justify-between rounded-[var(--radius-lg)] p-6 transition-all duration-200 shadow-lg text-left select-none overflow-hidden group",
         isActive
-          ? "bg-[var(--color-bg-surface)] text-[var(--color-text-primary)] ring-2 ring-[var(--color-brand-primary)] shadow-2xl"
+          ? "bg-[var(--color-bg-surface)] ring-2 ring-[var(--color-brand-primary)] shadow-2xl text-[var(--color-text-inverse)]"
           : "bg-[var(--color-bg-subtle)] text-[var(--color-text-muted)] border border-[var(--color-border-subtle)] hover:bg-[var(--color-bg-surface)]"
       )}
     >
-      {/* Top Header Badge & Experience Status */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <span
+      {isActive && experience.images?.[0] && (
+        <div className="absolute inset-0 z-0 bg-black">
+          <Image
+            src={experience.images[0]}
+            alt={experience.title}
+            fill
+            className="object-cover opacity-70 transition-transform duration-700 ease-out group-hover:scale-110"
+            unoptimized
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+        </div>
+      )}
+
+      {/* Content Layer */}
+      <div className="relative z-10 flex h-full flex-col justify-between">
+        {/* Top Header Badge & Experience Status */}
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <span
+              className={cn(
+                "inline-block rounded-[var(--radius-sm)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider",
+                isActive
+                  ? "bg-[var(--color-brand-primary)] text-[var(--color-text-inverse)]"
+                  : "bg-[var(--color-border-subtle)] text-[var(--color-text-muted)]"
+              )}
+            >
+              {isActive ? "Active Experience" : "Explorer Item"}
+            </span>
+            {experience.duration && (
+              <span className="text-[11px] text-[var(--color-text-subtle)] font-medium">
+                {experience.duration}
+              </span>
+            )}
+          </div>
+
+          {/* Card Title */}
+          <h3
             className={cn(
-              "inline-block rounded-[var(--radius-sm)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider",
-              isActive
-                ? "bg-[var(--color-brand-primary)] text-[var(--color-text-inverse)]"
-                : "bg-[var(--color-border-subtle)] text-[var(--color-text-muted)]"
+              "font-serif font-medium leading-snug transition-colors line-clamp-2",
+              isActive ? "text-2xl text-[var(--color-text-inverse)]" : "text-lg text-[var(--color-text-muted)]"
             )}
           >
-            {isActive ? "Active Experience" : "Explorer Item"}
-          </span>
-          {experience.duration && (
-            <span className="text-[11px] text-[var(--color-text-subtle)] font-medium">
-              {experience.duration}
+            {experience.title}
+          </h3>
+
+          {/* Teaser Text */}
+          <p className={cn(
+            "text-xs leading-relaxed line-clamp-3",
+            isActive ? "text-white/80" : "text-[var(--color-text-muted)]"
+          )}>
+            {experience.teaser}
+          </p>
+        </div>
+
+        {/* Card Highlights */}
+        {experience.highlights.length > 0 && (
+          <ul className="space-y-1 my-2">
+            {experience.highlights.slice(0, 2).map((highlight, i) => (
+              <li key={i} className={cn(
+                "text-[11px] flex items-center gap-1.5",
+                isActive ? "text-white/70" : "text-[var(--color-text-subtle)]"
+              )}>
+                <span className={cn(
+                  "h-1 w-1 rounded-full",
+                  isActive ? "bg-white/70" : "bg-[var(--color-brand-secondary)]"
+                )} />
+                <span>{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {/* Action Footer */}
+        <div className={cn(
+          "pt-4 border-t flex items-center justify-between",
+          isActive ? "border-white/20" : "border-[var(--color-border-subtle)]"
+        )}>
+          {isActive ? (
+            <span className="inline-flex items-center text-xs font-semibold text-white group-hover:underline">
+              Explore Details →
+            </span>
+          ) : (
+            <span className="text-xs text-[var(--color-text-subtle)] group-hover:text-[var(--color-text-primary)]">
+              Click to focus
             </span>
           )}
         </div>
-
-        {/* Card Title */}
-        <h3
-          className={cn(
-            "font-serif font-medium leading-snug transition-colors",
-            isActive ? "text-2xl text-[var(--color-text-primary)]" : "text-lg text-[var(--color-text-muted)]"
-          )}
-        >
-          {experience.title}
-        </h3>
-
-        {/* Teaser Text */}
-        <p className="text-xs text-[var(--color-text-muted)] leading-relaxed line-clamp-3">
-          {experience.teaser}
-        </p>
-      </div>
-
-      {/* Card Highlights */}
-      {experience.highlights.length > 0 && (
-        <ul className="space-y-1 my-2">
-          {experience.highlights.slice(0, 2).map((highlight, i) => (
-            <li key={i} className="text-[11px] text-[var(--color-text-subtle)] flex items-center gap-1.5">
-              <span className="h-1 w-1 rounded-full bg-[var(--color-brand-secondary)]" />
-              <span>{highlight}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* Action Footer */}
-      <div className="pt-4 border-t border-[var(--color-border-subtle)] flex items-center justify-between">
-        {isActive ? (
-          <span className="inline-flex items-center text-xs font-semibold text-[var(--color-brand-primary)] group-hover:underline">
-            Explore Details →
-          </span>
-        ) : (
-          <span className="text-xs text-[var(--color-text-subtle)] group-hover:text-[var(--color-text-primary)]">
-            Click to focus
-          </span>
-        )}
       </div>
     </article>
   );
