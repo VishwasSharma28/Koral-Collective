@@ -57,7 +57,7 @@ export function CircularExplorer({ offering, experiences }: CircularExplorerProp
 
   return (
     <div ref={trackRef} className="relative w-full" style={{ height: trackHeightVh }}>
-      <div className={isReducedMotion ? "relative py-12" : "sticky top-16 min-h-[calc(100vh-4rem)] flex flex-col justify-center py-8"}>
+      <div className={isReducedMotion ? "relative py-12" : "sticky top-20 min-h-[calc(100vh-5rem)] flex flex-col justify-center py-8"}>
         <Container size="wide">
           {/* Header & Back Navigation */}
           <div className="mb-6 space-y-3 border-b border-[var(--color-border-subtle)] pb-6">
