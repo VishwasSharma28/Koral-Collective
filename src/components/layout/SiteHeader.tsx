@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,17 +11,42 @@ import { cn } from "@/lib/cn";
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const navItems = getNavItems();
+  
+  // Home page starts transparent, other pages are always "scrolled" style
+  const isHome = pathname === "/";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    
+    // Initial check
+    handleScroll();
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const headerActive = !isHome || isScrolled || mobileMenuOpen;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-base)]/95 backdrop-blur-sm">
+    <header 
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b",
+        headerActive 
+          ? "bg-[var(--color-bg-base)]/95 backdrop-blur-md border-[var(--color-border-subtle)] shadow-sm py-0" 
+          : "bg-transparent border-transparent py-2"
+      )}
+    >
       <Container size="wide">
         <div className="flex h-20 items-center justify-between">
-          {/* Official Logo — wordmark is included inside the image asset */}
+          {/* Official Logo */}
           <Link
             href="/"
-            className="flex-shrink-0 hover:opacity-85 transition-opacity focus:outline-none focus:ring-2 focus:ring-[var(--color-brand-primary)] focus:ring-offset-2 rounded-sm"
+            className="flex-shrink-0 hover:opacity-85 transition-opacity focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2 rounded-sm"
             aria-label="Koral Collective — home"
           >
             <Image
@@ -29,7 +54,10 @@ export function SiteHeader() {
               alt="the koral collective"
               width={120}
               height={120}
-              className="h-16 w-auto object-contain"
+              className={cn(
+                "h-16 w-auto object-contain transition-all duration-300",
+                !headerActive && "brightness-0 invert drop-shadow-md"
+              )}
               priority
               unoptimized
             />
@@ -37,7 +65,7 @@ export function SiteHeader() {
 
           {/* Desktop Navigation */}
           <nav aria-label="Main navigation" className="hidden md:block">
-            <ul className="flex items-center space-x-8 text-sm font-medium">
+            <ul className="flex items-center space-x-8 text-sm font-sans font-medium">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
@@ -45,10 +73,14 @@ export function SiteHeader() {
                     <Link
                       href={item.href}
                       className={cn(
-                        "transition-colors hover:text-[var(--color-text-primary)] py-2 border-b-2",
-                        isActive
-                          ? "border-[var(--color-brand-primary)] text-[var(--color-text-primary)]"
-                          : "border-transparent text-[var(--color-text-muted)]"
+                        "transition-colors py-2 border-b-2 tracking-wide",
+                        headerActive 
+                          ? (isActive
+                            ? "border-[var(--color-brand-primary)] text-[var(--color-brand-primary)]"
+                            : "border-transparent text-[var(--color-text-muted)] hover:text-[var(--color-brand-primary)]")
+                          : (isActive
+                            ? "border-white/80 text-white"
+                            : "border-transparent text-white/80 hover:text-white hover:border-white/30")
                       )}
                       aria-current={isActive ? "page" : undefined}
                     >
@@ -63,7 +95,12 @@ export function SiteHeader() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="inline-flex items-center justify-center p-2 rounded-md text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-subtle)] md:hidden focus:outline-none focus:ring-2 focus:ring-offset-2"
+            className={cn(
+              "inline-flex items-center justify-center p-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 md:hidden",
+              headerActive 
+                ? "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-subtle)] focus:ring-[var(--color-brand-primary)]" 
+                : "text-white hover:bg-white/10 focus:ring-white"
+            )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
@@ -98,9 +135,9 @@ export function SiteHeader() {
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={cn(
-                        "block px-3 py-2 text-base font-medium rounded-md transition-colors",
+                        "block px-3 py-2 text-base font-sans font-medium rounded-md transition-colors",
                         isActive
-                          ? "bg-[var(--color-bg-subtle)] text-[var(--color-text-primary)]"
+                          ? "bg-[var(--color-bg-subtle)] text-[var(--color-brand-primary)]"
                           : "text-[var(--color-text-muted)] hover:bg-[var(--color-bg-subtle)] hover:text-[var(--color-text-primary)]"
                       )}
                       aria-current={isActive ? "page" : undefined}

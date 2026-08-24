@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="100%" height="100%">
+  <desc>Coconut Tree Placeholder</desc>
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Trunk -->
+    <path d="M100,380 Q90,200 110,50" stroke-width="8" fill="currentColor" fill-opacity="0.1"/>
+    <!-- Leaves -->
+    <path d="M110,50 Q40,40 20,90" stroke-width="4"/>
+    <path d="M110,50 Q50,-10 80,-40" stroke-width="4"/>
+    <path d="M110,50 Q160,-20 180,20" stroke-width="4"/>
+    <path d="M110,50 Q180,70 150,110" stroke-width="4"/>
+    <path d="M110,50 Q130,90 90,120" stroke-width="4"/>
+    <!-- Leaf details (fronds) -->
+    <path d="M80,45 l-10,15 M60,50 l-10,15 M40,65 l-10,10" stroke-width="1"/>
+    <path d="M140,45 l10,15 M160,50 l10,15" stroke-width="1"/>
+  </g>
+</svg>
