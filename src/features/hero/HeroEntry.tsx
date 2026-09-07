@@ -17,7 +17,7 @@ type HeroEntryProps = {
 export function HeroEntry({ scrollDistanceMultiplier = 2.5 }: HeroEntryProps) {
   const trackRef = useRef<HTMLDivElement>(null);
 
-  const { progress, isReducedMotion, skipHero } = useHeroScroll({
+  const { progress, isReducedMotion } = useHeroScroll({
     trackRef,
   });
 
@@ -33,7 +33,6 @@ export function HeroEntry({ scrollDistanceMultiplier = 2.5 }: HeroEntryProps) {
         <HeroStage
           progress={progress}
           isReducedMotion={isReducedMotion}
-          onSkip={skipHero}
         />
       </div>
       <div id="home-content" className="absolute bottom-0 left-0 right-0 h-px pointer-events-none" />

@@ -37,7 +37,7 @@ export function SiteHeader() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b",
         headerActive 
-          ? "bg-[var(--color-bg-base)]/95 backdrop-blur-md border-[var(--color-border-subtle)] shadow-sm py-0" 
+          ? "bg-[#6B312D] border-[#6B312D] shadow-sm py-0"
           : "bg-transparent border-transparent py-2"
       )}
     >
@@ -56,7 +56,7 @@ export function SiteHeader() {
               height={120}
               className={cn(
                 "h-16 w-auto object-contain transition-all duration-300",
-                !headerActive && "brightness-0 invert drop-shadow-md"
+                !headerActive && "drop-shadow-md"
               )}
               priority
               unoptimized
@@ -76,11 +76,11 @@ export function SiteHeader() {
                         "transition-colors py-2 border-b-2 tracking-wide",
                         headerActive 
                           ? (isActive
-                            ? "border-[var(--color-brand-primary)] text-[var(--color-brand-primary)]"
-                            : "border-transparent text-[var(--color-text-muted)] hover:text-[var(--color-brand-primary)]")
+                            ? "border-[var(--color-brand-primary)] text-white"
+                            : "border-transparent text-white hover:text-white")
                           : (isActive
                             ? "border-white/80 text-white"
-                            : "border-transparent text-white/80 hover:text-white hover:border-white/30")
+                            : "border-transparent text-white hover:text-white hover:border-white/30")
                       )}
                       aria-current={isActive ? "page" : undefined}
                     >
@@ -98,7 +98,7 @@ export function SiteHeader() {
             className={cn(
               "inline-flex items-center justify-center p-2 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 md:hidden",
               headerActive 
-                ? "text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-bg-subtle)] focus:ring-[var(--color-brand-primary)]" 
+                ? "text-white hover:text-white hover:bg-white/10 focus:ring-[var(--color-brand-primary)]"
                 : "text-white hover:bg-white/10 focus:ring-white"
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -137,8 +137,8 @@ export function SiteHeader() {
                       className={cn(
                         "block px-3 py-2 text-base font-sans font-medium rounded-md transition-colors",
                         isActive
-                          ? "bg-[var(--color-bg-subtle)] text-[var(--color-brand-primary)]"
-                          : "text-[var(--color-text-muted)] hover:bg-[var(--color-bg-subtle)] hover:text-[var(--color-text-primary)]"
+                          ? "bg-white/10 text-white"
+                          : "text-white hover:bg-white/10 hover:text-white"
                       )}
                       aria-current={isActive ? "page" : undefined}
                     >

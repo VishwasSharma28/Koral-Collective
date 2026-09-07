@@ -1,14 +1,11 @@
 "use client";
 
-import { HeroSkipButton } from "./HeroSkipButton";
-
 type HeroStageProps = {
   progress: number;
   isReducedMotion: boolean;
-  onSkip: () => void;
 };
 
-export function HeroStage({ progress, isReducedMotion, onSkip }: HeroStageProps) {
+export function HeroStage({ progress, isReducedMotion }: HeroStageProps) {
   // Title scaling and positioning
   const titleY = isReducedMotion ? 0 : -progress * 60; 
   const titleOpacity = isReducedMotion ? 1 : Math.max(0, 1 - progress * 2.5);
@@ -35,16 +32,6 @@ export function HeroStage({ progress, isReducedMotion, onSkip }: HeroStageProps)
 
       <div className="absolute inset-0 bg-[#261914]/45 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-[#261914]/55 via-transparent to-[#261914]/35 pointer-events-none" />
-
-      {/* Hero Skip Control */}
-      {!isReducedMotion && progress < 0.9 && (
-        <div className="absolute top-6 right-6 z-50 sm:top-8 sm:right-8">
-          <HeroSkipButton
-            onSkip={onSkip}
-            className="px-4 py-2 text-xs font-sans font-medium uppercase tracking-wider rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-md hover:bg-white/20 transition-all focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
-          />
-        </div>
-      )}
 
       {/* Centered Stage Content */}
       <div className="relative z-20 flex h-full flex-col items-center justify-start pt-[20vh] px-4 text-center">
