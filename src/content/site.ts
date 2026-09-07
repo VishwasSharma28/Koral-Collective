@@ -14,8 +14,10 @@ export const siteConfig: SiteConfig = {
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "Offerings", href: "/offerings" },
   { label: "Team", href: "/team" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Resources", href: "/resources" },
+  {
+    label: "Chat on WhatsApp",
+    href: "https://wa.me/0000000000?text=Hello%20Koral%20Collective%2C%20I%20would%20like%20to%20enquire.",
+  },
 ];

@@ -66,11 +66,19 @@ export type TeamMember = {
   name: string;
   role: string;
   bio: string;
+  details?: string;
+  image?: string;
+};
+
+export type TeamGroup = {
+  title: string;
+  members: TeamMember[];
 };
 
 export type TeamContent = {
   title: string;
-  members: TeamMember[];
+  intro: string[];
+  groups: TeamGroup[];
   seo: SeoFields;
 };
 

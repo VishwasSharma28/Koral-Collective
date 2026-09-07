@@ -1,7 +1,7 @@
 import { BrandStory } from "@/components/home/BrandStory";
+import { Faqs } from "@/components/home/Faqs";
 import { OfferingSelector } from "@/components/home/OfferingSelector";
-import { SupportingStory } from "@/components/home/SupportingStory";
-import { Testimonials } from "@/components/home/Testimonials";
+import { WalkWithUs } from "@/components/home/WalkWithUs";
 import { HeroEntry } from "@/features/hero";
 
 export default function HomePage() {
@@ -10,8 +10,8 @@ export default function HomePage() {
       <HeroEntry scrollDistanceMultiplier={2.5} />
       <BrandStory />
       <OfferingSelector />
-      <Testimonials />
-      <SupportingStory />
+      <WalkWithUs />
+      <Faqs />
     </>
   );
 }

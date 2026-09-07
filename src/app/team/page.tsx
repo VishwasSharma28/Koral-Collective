@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Container } from "@/components/ui/Container";
+import { TeamAccordion } from "@/components/team/TeamAccordion";
 import { getTeamContent } from "@/content";
 
 const team = getTeamContent();
@@ -12,17 +13,17 @@ export const metadata: Metadata = {
 
 export default function TeamPage() {
   return (
-    <Container className="py-12">
-      <h1 className="text-3xl font-medium">{team.title}</h1>
-      <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-        {team.members.map((member) => (
-          <li key={member.id} className="rounded border border-neutral-200 p-4">
-            <h2 className="font-medium">{member.name}</h2>
-            <p className="text-sm text-neutral-500">{member.role}</p>
-            <p className="mt-2 text-sm text-neutral-600">{member.bio}</p>
-          </li>
-        ))}
-      </ul>
+    <Container size="default" className="py-16 sm:py-24">
+      <header className="max-w-4xl border-b border-[var(--color-border-strong)] pb-12 sm:pb-16">
+        <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-brand-primary)]">About us</p>
+        <h1 className="mt-4 text-5xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-7xl">
+          {team.title}
+        </h1>
+        <div className="mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">
+          {team.intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
+      </header>
+      <TeamAccordion groups={team.groups} />
     </Container>
   );
 }

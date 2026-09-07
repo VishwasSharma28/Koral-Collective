@@ -1,27 +1,27 @@
 :root {
   /* Surfaces */
-  --color-bg-base: #F7F1E3;
-  --color-bg-surface: #FDFAF5;
-  --color-bg-subtle: #EBDCD0;
+  --color-bg-base: #F3E8D2;
+  --color-bg-surface: #FBF4E7;
+  --color-bg-subtle: #DCC9B4;
 
   /* Text & Content */
-  --color-text-primary: #241C18;
-  --color-text-muted: #3A251C;
-  --color-text-subtle: #7A5F52;
-  --color-text-inverse: #F7F1E3;
+  --color-text-primary: #2E211B;
+  --color-text-muted: #50382B;
+  --color-text-subtle: #806553;
+  --color-text-inverse: #F3E8D2;
 
   /* Brand & Accent (Parametric design tokens) */
-  --color-brand-primary: #7F1D1D;
-  --color-brand-secondary: #8B1E24;
-  --color-accent: #B68A3A;
+  --color-brand-primary: #742C2A;
+  --color-brand-secondary: #9B4938;
+  --color-accent: #B28A45;
 
   /* Borders & Dividers */
-  --color-border-subtle: #E6D8CD;
-  --color-border-strong: #B68A3A;
+  --color-border-subtle: #D5BFA9;
+  --color-border-strong: #B28A45;
 
   /* Typography Stack Tokens (Overridden by Next.js fonts) */
-  --font-display: var(--font-display), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-body: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
 
   /* Radii */
   --radius-sm: 0.25rem;

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { HeroSkipButton } from "./HeroSkipButton";
 
 type HeroStageProps = {
@@ -10,10 +9,6 @@ type HeroStageProps = {
 };
 
 export function HeroStage({ progress, isReducedMotion, onSkip }: HeroStageProps) {
-  // Normalized animation calculations (0 -> 1)
-  const imageScale = isReducedMotion ? 1 : 1 + progress * 0.15;
-  const imageY = isReducedMotion ? 0 : progress * 100;
-  
   // Title scaling and positioning
   const titleY = isReducedMotion ? 0 : -progress * 60; 
   const titleOpacity = isReducedMotion ? 1 : Math.max(0, 1 - progress * 2.5);
@@ -28,8 +23,18 @@ export function HeroStage({ progress, isReducedMotion, onSkip }: HeroStageProps)
   return (
     <div className="relative h-screen w-full overflow-hidden bg-[var(--color-brand-primary)] text-[var(--color-text-inverse)] select-none">
       
-      {/* Abstract Texture/Gradient Layer for "red cultural poster" feel */}
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent pointer-events-none" />
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src="/videos/Timeline%201.mov"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+      />
+
+      <div className="absolute inset-0 bg-[#261914]/45 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#261914]/55 via-transparent to-[#261914]/35 pointer-events-none" />
 
       {/* Hero Skip Control */}
       {!isReducedMotion && progress < 0.9 && (
@@ -40,24 +45,6 @@ export function HeroStage({ progress, isReducedMotion, onSkip }: HeroStageProps)
           />
         </div>
       )}
-
-      {/* Ratha Illustration - Moves with scroll */}
-      <div 
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] sm:w-[90%] md:w-[70%] max-w-5xl h-[60vh] sm:h-[75vh] origin-bottom transition-transform duration-75 ease-out will-change-transform z-10"
-        style={{
-          transform: `scale(${imageScale}) translateY(${imageY}px)`,
-          opacity: isReducedMotion ? 1 : Math.max(0, 1 - progress * 1.5)
-        }}
-      >
-        <Image 
-          src="/images/illustrations/ratha.svg" 
-          alt="Traditional Tulu Nadu Temple Ratha"
-          fill
-          className="object-contain object-bottom"
-          priority
-          unoptimized
-        />
-      </div>
 
       {/* Centered Stage Content */}
       <div className="relative z-20 flex h-full flex-col items-center justify-start pt-[20vh] px-4 text-center">
@@ -81,7 +68,7 @@ export function HeroStage({ progress, isReducedMotion, onSkip }: HeroStageProps)
               transform: `translateY(${revealY}px)`,
             }}
           >
-            <p className="mx-auto max-w-2xl font-serif text-2xl text-[#F7F1E3]/90 sm:text-3xl font-light italic">
+            <p className="mx-auto max-w-2xl font-serif text-2xl text-[#F7F1E3]/90 sm:text-3xl font-light">
               Experiencing Tulu Nadu, one walk at a time.
             </p>
           </div>
