@@ -18,6 +18,6 @@ export const navItems: NavItem[] = [
   { label: "Team", href: "/team" },
   {
     label: "Chat on WhatsApp",
-    href: "https://wa.me/0000000000?text=Hello%20Koral%20Collective%2C%20I%20would%20like%20to%20enquire.",
+    href: "https://wa.me/919535196043",
   },
 ];

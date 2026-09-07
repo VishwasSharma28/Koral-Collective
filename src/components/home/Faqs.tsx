@@ -5,16 +5,75 @@ import { Section } from "@/components/ui/Section";
 
 const faqs = [
   {
-    question: "What can I expect from a Koral experience?",
-    answer: "Small-group journeys shaped around local food, living heritage, and the people who make each place distinct.",
+    question: "Who are these trails designed for?",
+    answer: `Anyone curious about the history, culture, and cuisine of Tulunadu`,
   },
   {
-    question: "Are the experiences suitable for visitors new to Tulu Nadu?",
-    answer: "Yes. Each experience is designed as a welcoming introduction, with enough context to help you look closer and feel at ease.",
+    question: "How much walking is involved?",
+    answer: `Each trail involves between 1.5 and 2.5 kilometres of walking at a comfortable pace. You should be in reasonable health and able to manage moderate walking without difficulty.`,
   },
   {
-    question: "How do I enquire or plan a visit?",
-    answer: "Explore the offerings, choose what feels right, and reach out to us on WhatsApp for the latest details and availability.",
+    question: "What weather should I expect?",
+    answer: `Coastal Karnataka is tropical, warm, and humid year-round.
+
+December to February is the ideal window: lower temperatures, manageable humidity, and clear skies.
+
+March to May brings intense heat.
+
+June to September is monsoon season, with heavy daily rain, but the landscape turns a remarkable green.
+
+October and November are transitional, cooling gradually as the rains recede.
+
+Whatever the season, these are essential:
+
+1. Water bottle
+2. Comfortable, water-resistant footwear
+3. Sunglasses
+4. Cap
+5. Sunscreen
+6. Umbrella`,
+  },
+  {
+    question: "What should I wear?",
+    answer: `You will visit religious sites, private homes, and historic town centres where you must remove your footwear before entering. Dress modestly and respectfully.
+
+Loose cotton or linen clothing is practical in the coastal humidity and appropriate for the spaces you’ll be entering.`,
+  },
+  {
+    question: "Is food included?",
+    answer: `Yes. Food is an integral part of every trail, a reflection of the culinary diversity of these districts. The trail features both meat and vegetarian offerings suited to its cultural context.
+
+Please note that all our trails and experiences are alcohol and smoke-free.`,
+  },
+  {
+    question: "Is transport provided?",
+    answer: `For the city walks, you are requested to make your own way to the meeting points: the starting locations are centrally situated and easily accessible by auto, local bus, scooter, bike, or car.
+
+For half-day excursions lasting 6 hours or more, transport is included.`,
+  },
+  {
+    question: "How do I confirm my booking?",
+    answer: `Bookings are confirmed only upon full payment. Reach out via WhatsApp to get started.
+
+Groups of 7 or more are encouraged to contact us directly for tailored arrangements.
+
+Follow our Instagram page for the latest trail dates.`,
+  },
+  {
+    question: "Do you charge different rates for domestic and international travellers?",
+    answer: `Yes. Our pricing is tiered accordingly: domestic travellers are charged in INR and international travellers in USD.
+
+Please refer to the individual trail pages for specific rates.`,
+  },
+  {
+    question: "What is your cancellations and refunds policy?",
+    answer: `A minimum of 4 guests is required to run any trail. If numbers fall below 4, the trail cannot proceed. Only in such an event will your payment be refunded.
+
+We are unable to offer refunds to guests who cancel or do not show up after booking. Food and transport are arranged specifically for each booking and logistically cannot be unwound.`,
+  },
+  {
+    question: "Are the trails pet-friendly?",
+    answer: `No. Animals cannot be accommodated on any of the trails or excursions.`,
   },
 ];
 
