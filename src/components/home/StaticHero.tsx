@@ -22,7 +22,7 @@ export function StaticHero() {
           {siteConfig.tagline}
         </p>
         <div className="pt-4 flex flex-wrap gap-4">
-          <Button href="#offerings" variant="primary" size="lg">
+          <Button href="/offerings" variant="primary" size="lg">
             Explore Offerings
           </Button>
           <Button href="/about" variant="outline" size="lg">

@@ -50,7 +50,7 @@ export function SiteHeader() {
             aria-label="Koral Collective — home"
           >
             <Image
-              src="/images/branding/koral-collective-logo.png"
+              src="/images/branding/koral-collective-logo-transparent.png"
               alt="the koral collective"
               width={120}
               height={120}
