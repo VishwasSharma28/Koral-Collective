@@ -8,6 +8,7 @@ import { Section } from "@/components/ui/Section";
 type Trail = {
   name: string;
   duration: string;
+  durationHours: 2 | 6;
   price: string;
   description: string;
   highlights: string[];
@@ -19,13 +20,126 @@ type Trail = {
 };
 
 const trails: Trail[] = [
-  { name: "Kallianpur", duration: "2 hours", price: "₹1600 or $25/per person", description: "From Neolithic settlement to Portuguese outpost to medieval shrine complex, Kallianpur weaves together five millennia of unbroken history, living faith, and royal inscription.", highlights: ["An early-historic stone deity of Hariti, a relic of long-lost Buddhist heritage", "Alupa-period temple pillars and shrine foundations", "A hero stone and a sati shrine", "Vasco da Gama and the Portuguese connection", "The Church of Nossa Senhora de Milagres", "The Deportation of 1784", "The Miracle of the Bees", "Living memory lanes"], leader: "Leslie J Dias", leaderHref: "/team", pictogram: "/images/illustrations/map-logo/IMG_4267.png", position: { left: "20.2%", top: "37.2%" } },
-  { name: "Barkur", duration: "6 hours", price: "₹4500 or $75/per person", description: "From Alupa dynasty capital to ancient global trading port to a jewel in the Vijayanagara empire, Barakanur—today’s Barkur—is a heritage town of royal legacy, lost empires, and timeless stone architecture on the banks of the Seetha River.", highlights: ["Capital city for 400 years during the Alupa reign", "Global trade centre with connections to Rome and Greece", "The Ten Traditional Quarters", "The Legend of 365 Stone Temples", "The Jain Temple Complex (Kathale Basadi)"], note: "*Transport by chartered bus is provided between stops. Walking is required at each location.", pictogram: "/images/illustrations/map-logo/IMG_4270.png", position: { left: "44.7%", top: "34.2%" } },
-  { name: "Basrur", duration: "6 hours", price: "₹4500 or $75/per person", description: "From Vijayanagara trading port to colonial battleground to tranquil village on the banks of the Varahi River, Barcelore—known today as Basrur—is a historic hamlet of global trade, royal ambition, and enduring past.", highlights: ["Maritime trade hub connecting Arabia, China, Europe and coveted by the Portuguese, Dutch, and British", "Target of Chhatrapati Shivaji’s historic first naval expedition", "The historic merchant quarters (Keris)", "The Shree Mahatobar Mahalingeshwara Temple"], note: "*Transport by chartered bus is provided between stops. Walking is required at each location.", pictogram: "/images/illustrations/map-logo/IMG_4276.png", position: { left: "71.8%", top: "75.2%" } },
-  { name: "Shirva", duration: "6 hours", price: "₹4500 or $75/per person", description: "From prehistoric megalith to medieval palace to land of the living folk epic, Shirva—the agrarian hinterland of Tulunadu— is a rarefied world of ancient ritual, enduring stone, and unbroken tradition.", highlights: ["The megalithic dolmen at Palli", "The Nadibettu Palace", "The picturesque landscape of Nandalike", "The setting of the Siri Paddana (folk epic)"], note: "*Transport by chartered bus is provided between stops. Walking is required at each location.", pictogram: "/images/illustrations/map-logo/IMG_4275.png", position: { left: "25.3%", top: "63.1%" } },
-  { name: "Moodabidri", duration: "6 hours", price: "₹4500 or $75/per person", description: "From age-old bamboo groves to the epicentre of Jainism to living heritage town, Moodbidri—the Jain Kashi of the South—is a site of sacred stone, royal patronage, and monolithic magnificence.", highlights: ["Royal legacy of the Alupas, the Vijayanagara empire, and the Chowtadynasty", "The 18 historic Jain shrines", "The Thousand Pillar Temple (The Saavira Kambada Basadi)", "Home to ancient literary traditions such as the Dhavala palm-leaf manuscripts"], note: "*Transport by chartered bus is provided between stops. Walking is required at each location.", pictogram: "/images/illustrations/map-logo/IMG_4270.png", position: { left: "54.2%", top: "63.1%" } },
-  { name: "Karkala", duration: "6 hours", price: "₹4500 or $75/per person", description: "From black granite capital to Jain pilgrimage centre to living monument of medieval stonecraft, Karikallu—today’s Karkala—is a landmark of Jain culture, philosophy, and immutable artisan traditions.", highlights: ["Capital of the Bhairarasa Palegars", "The 42-foot monolithic statue of Lord Gommateshwara (Bahubali)", "The Four-Faced Temple (The Chaturmukha Basadi)", "The Shree Venkatramana Temple", "The bazaars dotted with shops run by GSB traders"], note: "*Transport by chartered bus is provided between stops. Walking is required at each location.", pictogram: "/images/illustrations/map-logo/IMG_4274.png", position: { left: "84.1%", top: "53.4%" } },
+  {
+    name: "Kallianpur",
+    duration: "2 hours",
+    durationHours: 2,
+    price: "₹1600 or $25/per person",
+    description: "From Neolithic settlement to Portuguese outpost to medieval shrine complex, Kallianpur weaves together five millennia of unbroken history, living faith, and royal inscription.",
+    highlights: [
+      "An early-historic stone deity of Hariti, a relic of long-lost Buddhist heritage",
+      "Alupa-period temple pillars and shrine foundations",
+      "A hero stone and a sati shrine",
+      "Vasco da Gama and the Portuguese connection",
+      "The Church of Nossa Senhora de Milagres",
+      "The Deportation of 1784",
+      "The Miracle of the Bees",
+      "Living memory lanes",
+    ],
+    leader: "Leslie J Dias",
+    leaderHref: "/team",
+    pictogram: "/images/illustrations/map-logo/Kallianpur.png",
+    position: { left: "19.0%", top: "35.5%" },
+  },
+  {
+    name: "Barkur",
+    duration: "6 hours",
+    durationHours: 6,
+    price: "₹4500 or $75/per person",
+    description: "From Alupa dynasty capital to ancient global trading port to a jewel in the Vijayanagara empire, Barakanur—today's Barkur—is a heritage town of royal legacy, lost empires, and timeless stone architecture on the banks of the Seetha River.",
+    highlights: [
+      "Capital city for 400 years during the Alupa reign",
+      "Global trade centre with connections to Rome and Greece",
+      "The Ten Traditional Quarters",
+      "The Legend of 365 Stone Temples",
+      "The Jain Temple Complex (Kathale Basadi)",
+    ],
+    note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
+    pictogram: "/images/illustrations/map-logo/Barkur.png",
+    position: { left: "45.0%", top: "27.5%" },
+  },
+  {
+    name: "Basrur",
+    duration: "6 hours",
+    durationHours: 6,
+    price: "₹4500 or $75/per person",
+    description: "From Vijayanagara trading port to colonial battleground to tranquil village on the banks of the Varahi River, Barcelore—known today as Basrur—is a historic hamlet of global trade, royal ambition, and enduring past.",
+    highlights: [
+      "Maritime trade hub connecting Arabia, China, Europe and coveted by the Portuguese, Dutch, and British",
+      "Target of Chhatrapati Shivaji's historic first naval expedition",
+      "The historic merchant quarters (Keris)",
+      "The Shree Mahatobar Mahalingeshwara Temple",
+    ],
+    note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
+    pictogram: "/images/illustrations/map-logo/Basrur.png",
+    position: { left: "71.5%", top: "73.0%" },
+  },
+  {
+    name: "Shirva",
+    duration: "6 hours",
+    durationHours: 6,
+    price: "₹4500 or $75/per person",
+    description: "From prehistoric megalith to medieval palace to land of the living folk epic, Shirva—the agrarian hinterland of Tulunadu—is a rarefied world of ancient ritual, enduring stone, and unbroken tradition.",
+    highlights: [
+      "The megalithic dolmen at Palli",
+      "The Nadibettu Palace",
+      "The picturesque landscape of Nandalike",
+      "The setting of the Siri Paddana (folk epic)",
+    ],
+    note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
+    pictogram: "/images/illustrations/map-logo/Shirva.png",
+    position: { left: "24.5%", top: "57.5%" },
+  },
+  {
+    name: "Moodabidri",
+    duration: "6 hours",
+    durationHours: 6,
+    price: "₹4500 or $75/per person",
+    description: "From age-old bamboo groves to the epicentre of Jainism to living heritage town, Moodbidri—the Jain Kashi of the South—is a site of sacred stone, royal patronage, and monolithic magnificence.",
+    highlights: [
+      "Royal legacy of the Alupas, the Vijayanagara empire, and the Chowta dynasty",
+      "The 18 historic Jain shrines",
+      "The Thousand Pillar Temple (The Saavira Kambada Basadi)",
+      "Home to ancient literary traditions such as the Dhavala palm-leaf manuscripts",
+    ],
+    note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
+    pictogram: "/images/illustrations/map-logo/Moodbidri.png",
+    position: { left: "55.0%", top: "56.5%" },
+  },
+  {
+    name: "Karkala",
+    duration: "6 hours",
+    durationHours: 6,
+    price: "₹4500 or $75/per person",
+    description: "From black granite capital to Jain pilgrimage centre to living monument of medieval stonecraft, Karikallu—today's Karkala—is a landmark of Jain culture, philosophy, and immutable artisan traditions.",
+    highlights: [
+      "Capital of the Bhairarasa Palegars",
+      "The 42-foot monolithic statue of Lord Gommateshwara (Bahubali)",
+      "The Four-Faced Temple (The Chaturmukha Basadi)",
+      "The Shree Venkatramana Temple",
+      "The bazaars dotted with shops run by GSB traders",
+    ],
+    note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
+    pictogram: "/images/illustrations/map-logo/Karkala.png",
+    position: { left: "84.0%", top: "48.5%" },
+  },
 ];
+
+const rathaBeedi = {
+  name: "Ratha Beedi",
+  duration: "2 hours",
+  durationHours: 2 as const,
+  price: "₹1600 or $25/per person",
+  description: "A walking trail through Udupi's living temple quarter, where ritual, commerce, architecture, and everyday life meet.",
+  highlights: [
+    "The Krishna Temple complex",
+    "The ritual life of the temple square",
+    "Ratha Beedi and its changing streetscape",
+    "Shops, eateries, and everyday life",
+    "Historic buildings and local memory",
+  ],
+  pictogram: "/images/illustrations/map-logo/Ratha Beedi.png",
+};
 
 export function OfferingExperience() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -39,25 +153,203 @@ export function OfferingExperience() {
           <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-brand-primary)]">Our offerings</p>
           <h1 id="offerings-heading" className="mt-3 text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-6xl">Walking trails of Tulunadu.</h1>
         </div>
+
+        {/* Duration legend */}
+        <div className="flex flex-wrap gap-4 text-xs">
+          <span className="inline-flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full bg-[#718d53]" aria-hidden="true" />
+            <span className="text-[var(--color-text-muted)]">2-hour walk</span>
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full bg-[#845f3b]" aria-hidden="true" />
+            <span className="text-[var(--color-text-muted)]">6-hour excursion (transport included)</span>
+          </span>
+        </div>
+
         <div className="grid items-start gap-8 xl:grid-cols-[minmax(0,1.15fr)_minmax(24rem,0.85fr)] xl:gap-12">
+          {/* MAP */}
           <div className="relative w-full overflow-hidden border border-[var(--color-border-strong)] bg-[#d7bd8c]">
-            <Image src="/images/illustrations/tulunadu-offering-map.png" alt="Illustrated map showing the six Koral Collective walking trail locations" width={1536} height={1024} className="block h-auto w-full" priority />
+            <Image
+              src="/images/illustrations/tulunadu-offering-map.png"
+              alt="Illustrated map showing the six Koral Collective walking trail locations across Tulunadu"
+              width={1536}
+              height={1024}
+              className="block h-auto w-full"
+              priority
+            />
             <div className="absolute inset-0" aria-label="Walking trail locations">
               {trails.map((trail, index) => {
                 const isActive = index === activeIndex;
-                return <button key={trail.name} type="button" onClick={() => selectTrail(index)} aria-label={`Select ${trail.name} trail`} aria-pressed={isActive} className={`absolute flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 bg-[#f3e8d2]/90 p-1.5 shadow-sm transition duration-200 hover:scale-110 hover:bg-[#fff8eb] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#742c2a] focus-visible:ring-offset-2 sm:h-12 sm:w-12 ${isActive ? "scale-110 border-[#742c2a] ring-4 ring-[#742c2a]/25" : "border-[#806553]/80 opacity-90"}`} style={trail.position}><Image src={trail.pictogram} alt="" width={350} height={350} className="h-full w-full object-contain" /></button>;
+                const is2Hour = trail.durationHours === 2;
+                return (
+                  <button
+                    key={trail.name}
+                    type="button"
+                    onClick={() => selectTrail(index)}
+                    aria-label={`Select ${trail.name} trail`}
+                    aria-pressed={isActive}
+                    className={`absolute flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 bg-[#f3e8d2]/90 p-1.5 shadow-sm transition duration-200 hover:scale-110 hover:bg-[#fff8eb] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#742c2a] focus-visible:ring-offset-2 sm:h-12 sm:w-12 ${
+                      isActive
+                        ? `scale-110 ring-4 ${is2Hour ? "border-[#718d53] ring-[#718d53]/30" : "border-[#742c2a] ring-[#742c2a]/25"}`
+                        : "border-[#806553]/80 opacity-90"
+                    }`}
+                    style={trail.position}
+                  >
+                    <Image
+                      src={trail.pictogram}
+                      alt=""
+                      width={350}
+                      height={350}
+                      className="h-full w-full object-contain"
+                    />
+                  </button>
+                );
               })}
             </div>
           </div>
+
+          {/* DETAIL PANEL */}
           <article className="border-t border-[var(--color-border-strong)] pt-5" aria-live="polite">
-            <div className="flex items-start justify-between gap-4"><div><p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-brand-primary)]">{activeIndex + 1} / {trails.length}</p><h2 className="mt-3 text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-5xl">{activeTrail.name} trail</h2><p className="mt-4 text-sm font-medium text-[var(--color-text-muted)]">{activeTrail.duration} | {activeTrail.price}</p></div><Image src={activeTrail.pictogram} alt="" width={350} height={350} className="h-14 w-14 shrink-0 object-contain" /></div>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-brand-primary)]">
+                  {activeIndex + 1} / {trails.length}
+                </p>
+                <h2 className="mt-3 text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-5xl">
+                  {activeTrail.name} trail
+                </h2>
+                <div className="mt-3 flex items-center gap-3">
+                  <span
+                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${
+                      activeTrail.durationHours === 2
+                        ? "bg-[#718d53]/15 text-[#3d572d]"
+                        : "bg-[#845f3b]/15 text-[#5a3828]"
+                    }`}
+                  >
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${
+                        activeTrail.durationHours === 2 ? "bg-[#718d53]" : "bg-[#845f3b]"
+                      }`}
+                      aria-hidden="true"
+                    />
+                    {activeTrail.duration}
+                  </span>
+                  <span className="text-sm text-[var(--color-text-muted)]">{activeTrail.price}</span>
+                </div>
+              </div>
+              <Image
+                src={activeTrail.pictogram}
+                alt=""
+                width={350}
+                height={350}
+                className="h-14 w-14 shrink-0 object-contain"
+              />
+            </div>
+
             <p className="mt-6 text-base leading-relaxed text-[var(--color-text-muted)]">{activeTrail.description}</p>
+
             <p className="mt-6 text-sm font-semibold text-[var(--color-text-primary)]">Highlights along the trail:</p>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[var(--color-text-muted)]">{activeTrail.highlights.map((highlight) => <li key={highlight} className="flex gap-2"><span aria-hidden="true">•</span><span>{highlight}</span></li>)}</ul>
-            {activeTrail.note ? <p className="mt-6 text-xs italic leading-relaxed text-[var(--color-text-subtle)]">{activeTrail.note}</p> : null}
-            {activeTrail.leader ? <p className="mt-6 text-sm text-[var(--color-text-muted)]">Walk led by <a href={activeTrail.leaderHref} target="_blank" rel="noreferrer" className="font-bold text-[var(--color-brand-primary)] underline underline-offset-4">{activeTrail.leader}</a>, Architect and Teacher</p> : null}
-            <div className="mt-8 flex items-center justify-between border-t border-[var(--color-border-subtle)] pt-5"><button type="button" onClick={() => selectTrail(activeIndex - 1)} aria-label="Previous trail" className="text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4">Previous</button><div className="flex items-center gap-2" aria-label="Choose a trail">{trails.map((trail, index) => <button key={trail.name} type="button" onClick={() => selectTrail(index)} aria-label={`Show ${trail.name} trail`} aria-current={index === activeIndex ? "true" : undefined} className={`h-2.5 w-2.5 rounded-full border border-[var(--color-brand-primary)] transition ${index === activeIndex ? "bg-[var(--color-brand-primary)]" : "bg-transparent opacity-45 hover:opacity-100"}`} />)}</div><button type="button" onClick={() => selectTrail(activeIndex + 1)} aria-label="Next trail" className="text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4">Next</button></div>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+              {activeTrail.highlights.map((highlight) => (
+                <li key={highlight} className="flex gap-2">
+                  <span aria-hidden="true">•</span>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+
+            {activeTrail.note ? (
+              <p className="mt-6 text-xs italic leading-relaxed text-[var(--color-text-subtle)]">{activeTrail.note}</p>
+            ) : null}
+
+            {activeTrail.leader ? (
+              <p className="mt-6 text-sm text-[var(--color-text-muted)]">
+                Walk led by{" "}
+                <a
+                  href={activeTrail.leaderHref}
+                  className="font-bold text-[var(--color-brand-primary)] underline underline-offset-4"
+                >
+                  {activeTrail.leader}
+                </a>
+                , Architect and Teacher
+              </p>
+            ) : null}
+
+            <div className="mt-8 flex items-center justify-between border-t border-[var(--color-border-subtle)] pt-5">
+              <button
+                type="button"
+                onClick={() => selectTrail(activeIndex - 1)}
+                aria-label="Previous trail"
+                className="text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4"
+              >
+                Previous
+              </button>
+              <div className="flex items-center gap-2" aria-label="Choose a trail">
+                {trails.map((trail, index) => (
+                  <button
+                    key={trail.name}
+                    type="button"
+                    onClick={() => selectTrail(index)}
+                    aria-label={`Show ${trail.name} trail`}
+                    aria-current={index === activeIndex ? "true" : undefined}
+                    className={`h-2.5 w-2.5 rounded-full border border-[var(--color-brand-primary)] transition ${
+                      index === activeIndex
+                        ? "bg-[var(--color-brand-primary)]"
+                        : "bg-transparent opacity-45 hover:opacity-100"
+                    }`}
+                  />
+                ))}
+              </div>
+              <button
+                type="button"
+                onClick={() => selectTrail(activeIndex + 1)}
+                aria-label="Next trail"
+                className="text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4"
+              >
+                Next
+              </button>
+            </div>
           </article>
+        </div>
+
+        {/* Ratha Beedi — separate offering, not on the map */}
+        <div className="border-t border-[var(--color-border-strong)] pt-10">
+          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-brand-primary)] mb-6">
+            Also available
+          </p>
+          <div className="grid gap-8 sm:grid-cols-[auto_1fr] items-start max-w-3xl">
+            <Image
+              src={rathaBeedi.pictogram}
+              alt=""
+              width={350}
+              height={350}
+              className="h-16 w-16 object-contain"
+            />
+            <div>
+              <div className="flex flex-wrap items-center gap-3">
+                <h2 className="text-2xl font-serif font-medium text-[var(--color-text-primary)]">
+                  {rathaBeedi.name} trail
+                </h2>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[#718d53]/15 px-3 py-1 text-xs font-medium text-[#3d572d]">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#718d53]" aria-hidden="true" />
+                  {rathaBeedi.duration}
+                </span>
+                <span className="text-sm text-[var(--color-text-muted)]">{rathaBeedi.price}</span>
+              </div>
+              <p className="mt-4 text-base leading-relaxed text-[var(--color-text-muted)]">{rathaBeedi.description}</p>
+              <ul className="mt-4 space-y-1.5 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                {rathaBeedi.highlights.map((highlight) => (
+                  <li key={highlight} className="flex gap-2">
+                    <span aria-hidden="true">•</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-xs italic text-[var(--color-text-subtle)]">
+                * Udupi city walk — make your own way to the meeting point.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </Section>

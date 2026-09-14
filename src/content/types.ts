@@ -16,6 +16,8 @@ export type SiteContact = {
     defaultMessage: string;
   };
   email: string;
+  phone?: string;
+  instagram?: string;
 };
 
 export type SiteConfig = {

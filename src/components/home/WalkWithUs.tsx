@@ -2,17 +2,19 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
+import { getSiteConfig } from "@/content";
 
 import { FootstepTrail } from "./FootstepTrail";
 
 export function WalkWithUs() {
-  const whatsappUrl = "https://wa.me/919535196043";
+  const siteConfig = getSiteConfig();
+  const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsapp.phoneE164}`;
 
   return (
     <Section
       as="section"
       aria-labelledby="walk-with-us-heading"
-      className="relative isolate overflow-hidden border-b border-[#4c3027] bg-[var(--color-brand-primary)] text-[var(--color-text-inverse)]"
+      className="relative isolate overflow-hidden border-b border-[#3d2419] bg-[#5A3828] text-[var(--color-text-inverse)]"
     >
       {/* Interactive footprint layer */}
       <FootstepTrail />
@@ -27,7 +29,7 @@ export function WalkWithUs() {
 
           <h2
             id="walk-with-us-heading"
-            className="mt-4 text-5xl font-serif font-medium uppercase leading-none text-[#f3e8d2] sm:text-7xl"
+            className="mt-4 text-5xl font-serif font-medium leading-none text-[#f3e8d2] sm:text-7xl"
           >
             Walk with us
           </h2>
@@ -43,7 +45,7 @@ export function WalkWithUs() {
             rel="noopener noreferrer"
             className="mt-8 inline-flex border-b border-[#e2b477] pb-2 text-xs font-medium uppercase tracking-[0.18em] text-[#f3e8d2] transition-colors hover:text-[#e2b477]"
           >
-            Enquire on WhatsApp →
+            Book via WhatsApp →
           </a>
         </div>
 
@@ -53,7 +55,7 @@ export function WalkWithUs() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block w-full border border-[#d7ae78]/60 bg-[#3b2721] p-5 shadow-[12px_12px_0_#5f302b] transition-transform hover:-translate-y-1 sm:p-7"
+            className="group block w-full border border-[#d7ae78]/60 bg-[#3b2419] p-5 shadow-[12px_12px_0_#3d2116] transition-transform hover:-translate-y-1 sm:p-7"
             aria-label="Connect with Koral Collective on WhatsApp"
           >
             {/* Heading */}
@@ -87,7 +89,7 @@ export function WalkWithUs() {
             href="/offerings"
             variant="ghost"
             size="md"
-            className="mt-5 w-full bg-[#3b2721] text-white hover:bg-[#2e211b] hover:text-white"
+            className="mt-5 w-full bg-[#3b2419] text-white hover:bg-[#2e1a10] hover:text-white"
           >
             Explore offerings →
           </Button>

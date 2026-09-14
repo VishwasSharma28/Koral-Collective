@@ -24,6 +24,13 @@ export const teamContent: TeamContent = {
       title: "Walk leads",
       members: [
         {
+          id: "leslie-j-dias",
+          name: "Leslie J Dias",
+          role: "Architect | Teacher",
+          bio: "Leslie J Dias leads the Kallianpur trail. An architect and teacher with deep roots in the region, he brings an intimate familiarity with Kallianpur's layered history, its built heritage, and the living community that animates its streets.",
+          image: undefined,
+        },
+        {
           id: "murugeshi-t",
           name: "Murugeshi T",
           role: "Professor of Archaeology",

@@ -37,7 +37,7 @@ export function SiteHeader() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b",
         headerActive 
-          ? "bg-[#6B312D] border-[#6B312D] shadow-sm py-0"
+          ? "bg-[#5A3828] border-[#5A3828] shadow-sm py-0"
           : "bg-transparent border-transparent py-2"
       )}
     >

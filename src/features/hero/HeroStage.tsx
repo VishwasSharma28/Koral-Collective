@@ -1,89 +1,73 @@
 "use client";
 
-type HeroStageProps = {
-  progress: number;
-  isReducedMotion: boolean;
-};
+import Image from "next/image";
+import Link from "next/link";
 
-export function HeroStage({ progress, isReducedMotion }: HeroStageProps) {
-  // Title scaling and positioning
-  const titleY = isReducedMotion ? 0 : -progress * 60; 
-  const titleOpacity = isReducedMotion ? 1 : Math.max(0, 1 - progress * 2.5);
-  
-  // Reveal Content (Tagline & Description)
-  const revealOpacity = isReducedMotion ? 1 : Math.max(0, 1 - progress * 3);
-  const revealY = isReducedMotion ? 0 : -progress * 40;
-
-  // Scroll indicator fade out
-  const scrollIndicatorOpacity = isReducedMotion ? 0 : Math.max(0, 1 - progress * 4);
-
+export function HeroStage() {
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-[var(--color-brand-primary)] text-[var(--color-text-inverse)] select-none">
-      
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        src="/videos/Timeline%201.mov"
-        autoPlay
-        muted
-        loop
-        playsInline
+    <div className="relative min-h-screen w-full overflow-hidden bg-[#2a1c14]">
+      {/* Static background image */}
+      <Image
+        src="/images/tulunadu-landscape.jpeg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+        priority
         aria-hidden="true"
       />
 
-      <div className="absolute inset-0 bg-[#261914]/45 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#261914]/55 via-transparent to-[#261914]/35 pointer-events-none" />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#1a0f09]/55 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1a0f09]/75 via-[#1a0f09]/40 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1a0f09]/40 via-transparent to-[#1a0f09]/50 pointer-events-none" />
 
-      {/* Centered Stage Content */}
-      <div className="relative z-20 flex h-full flex-col items-center justify-start pt-[20vh] px-4 text-center">
-        <div className="max-w-5xl space-y-8">
-          {/* Main Brand Title */}
-          <h1
-            className="font-serif text-6xl font-medium tracking-tight text-[#F7F1E3] sm:text-7xl md:text-8xl lg:text-[8rem] transition-all duration-75 ease-out leading-none"
-            style={{
-              transform: `translateY(${titleY}px)`,
-              opacity: titleOpacity
-            }}
-          >
-            KORAL<br />COLLECTIVE
-          </h1>
+      {/* 2-column content */}
+      <div className="relative z-10 flex min-h-screen items-center px-6 sm:px-10 lg:px-16 xl:px-24">
+        <div className="w-full max-w-7xl mx-auto grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center py-28 sm:py-32">
 
-          {/* Reveal Content (Tagline & Description) */}
-          <div
-            className="space-y-4 transition-all duration-75 ease-out"
-            style={{
-              opacity: revealOpacity,
-              transform: `translateY(${revealY}px)`,
-            }}
-          >
-            <p className="mx-auto max-w-2xl font-serif text-2xl text-[#F7F1E3]/90 sm:text-3xl font-light">
-              Experiencing Tulu Nadu, one walk at a time.
+          {/* Column 1: Brand identity */}
+          <div>
+            <p className="text-xs font-medium tracking-[0.3em] text-[#e2c89a]/80 font-sans mb-6 uppercase">
+              the koral collective
             </p>
+            <h1 className="font-serif text-5xl font-medium leading-[1.05] text-[#f7f1e3] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
+              Experience Tulunadu<br />one walk at a time
+            </h1>
           </div>
-        </div>
 
-        {/* Bottom Scroll Prompt Indicator */}
-        {!isReducedMotion && (
-          <div
-            className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-3 pointer-events-none transition-opacity duration-150 z-30"
-            style={{ opacity: scrollIndicatorOpacity }}
-          >
-            <span className="text-[10px] uppercase tracking-widest text-white/70 font-sans">
-              Scroll to discover
-            </span>
-            <div className="h-10 w-6 rounded-full border border-white/30 p-1 flex justify-center">
-              <div className="h-2 w-1 rounded-full bg-[var(--color-accent)] animate-bounce" />
+          {/* Column 2: Description + CTAs */}
+          <div className="space-y-8">
+            <div>
+              <p className="font-serif text-2xl font-medium text-[#f7f1e3]/90 sm:text-3xl leading-snug">
+                Walk the textures of Tulunadu threaded through time
+              </p>
+              <p className="mt-5 text-base leading-relaxed text-[#e2d5c0]/85 font-sans sm:text-lg">
+                For those who travel in unhurried grace, we invite you to experience a Tulunadu rarely seen, through immersive walking tours led by historians, archaeologists, and architects.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/team"
+                className="inline-flex items-center px-7 py-3 font-sans text-sm font-medium tracking-wide border border-[#f7f1e3] text-[#f7f1e3] transition-colors hover:bg-[#f7f1e3] hover:text-[#2a1c14] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f7f1e3] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+              >
+                About us
+              </Link>
+              <Link
+                href="/offerings"
+                className="inline-flex items-center px-7 py-3 font-sans text-sm font-medium tracking-wide bg-[#f7f1e3] text-[#2a1c14] transition-colors hover:bg-[#e2c89a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f7f1e3] focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+              >
+                Our offerings
+              </Link>
             </div>
           </div>
-        )}
+
+        </div>
       </div>
 
-      {/* Transition gradient to ivory section at bottom */}
-      <div 
-        className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[var(--color-bg-base)] to-transparent z-20"
-        style={{
-          opacity: isReducedMotion ? 1 : Math.min(1, progress * 2)
-        }}
-      />
+      {/* Fade to page bg at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--color-bg-base)] to-transparent z-20" />
     </div>
   );
 }

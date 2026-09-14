@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 
 export function SiteFooter() {
   const siteConfig = getSiteConfig();
+  const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsapp.phoneE164}`;
 
   return (
     <footer className="border-t border-[#4c3027] bg-[#211713] py-14 text-sm text-[#cdbda5]">
@@ -27,6 +28,7 @@ export function SiteFooter() {
               <li><Link href="/" className="transition-colors hover:text-[#f3e8d2]">Home</Link></li>
               <li><Link href="/offerings" className="transition-colors hover:text-[#f3e8d2]">Offerings</Link></li>
               <li><Link href="/team" className="transition-colors hover:text-[#f3e8d2]">Team</Link></li>
+              <li><Link href="/#faqs" className="transition-colors hover:text-[#f3e8d2]">FAQs</Link></li>
             </ul>
           </div>
 
@@ -35,18 +37,37 @@ export function SiteFooter() {
               Connect
             </p>
             <a
-              href={`https://wa.me/${siteConfig.contact.whatsapp.phoneE164.replace(/\D/g, "")}`}
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="block text-sm transition-colors hover:text-[#f3e8d2]"
             >
               WhatsApp
             </a>
+            {siteConfig.contact.phone && (
+              <a
+                href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}
+                className="mt-3 block text-sm transition-colors hover:text-[#f3e8d2]"
+              >
+                {siteConfig.contact.phone}
+              </a>
+            )}
             <a
               href={`mailto:${siteConfig.contact.email}`}
               className="mt-3 block text-sm transition-colors hover:text-[#f3e8d2]"
             >
               Email
             </a>
-            <span className="mt-3 block text-sm text-[#806f61]">Instagram</span>
+            {siteConfig.contact.instagram && (
+              <a
+                href={siteConfig.contact.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 block text-sm transition-colors hover:text-[#f3e8d2]"
+              >
+                Instagram
+              </a>
+            )}
           </div>
         </div>
 
