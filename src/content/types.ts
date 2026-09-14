@@ -43,17 +43,45 @@ export type Experience = {
   id: string;
   slug: string;
   offeringId: string;
+
   title: string;
   teaser: string;
   description: string;
+
   duration?: string;
   format?: string;
+
   highlights: string[];
-  /** Optional custom WhatsApp pre-filled message. Falls back to a generated default. */
+
+  /**
+   * Optional custom WhatsApp pre-filled message.
+   * Falls back to the generated default.
+   */
   contactMessage?: string;
+
+  /**
+   * Optional trail image.
+   * We will use a placeholder until the Cloudinary
+   * trail images are ready.
+   */
+  image?: ImageRef;
+
+  /**
+   * Position and marker information for the
+   * illustrated Tulunadu map.
+   *
+   * x/y are percentages from the top-left
+   * of the map.
+   */
+  map?: {
+    x: number;
+    y: number;
+    label?: string;
+    icon?: string;
+  };
+
   seo: SeoFields;
 };
-
 
 export type AboutContent = {
   title: string;
@@ -119,4 +147,3 @@ export type TestimonialsContent = {
   title: string;
   items: Testimonial[];
 };
-
