@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 import { Section } from "@/components/ui/Section";
+import { getAllExperiences } from "@/content";
 
 type Trail = {
   name: string;
@@ -38,8 +39,24 @@ const trails: Trail[] = [
     ],
     leader: "Leslie J Dias",
     leaderHref: "/team",
-    pictogram: "/images/illustrations/map-logo/Kallianpur.png",
-    position: { left: "19.0%", top: "35.5%" },
+    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391228/Church_details.png",
+    position: { left: "22%", top: "45%" },
+  },
+  {
+    name: "Ratha Beedi",
+    duration: "2 hours",
+    durationHours: 2,
+    price: "₹1600 or $25/per person",
+    description: "A walking trail through Udupi's living temple quarter, where ritual, commerce, architecture, and everyday life meet.",
+    highlights: [
+      "The Krishna Temple complex",
+      "The ritual life of the temple square",
+      "Ratha Beedi and its changing streetscape",
+      "Shops, eateries, and everyday life",
+      "Historic buildings and local memory",
+    ],
+    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391223/Ratha_details.png",
+    position: { left: "34%", top: "56%" },
   },
   {
     name: "Barkur",
@@ -55,8 +72,8 @@ const trails: Trail[] = [
       "The Jain Temple Complex (Kathale Basadi)",
     ],
     note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
-    pictogram: "/images/illustrations/map-logo/Barkur.png",
-    position: { left: "45.0%", top: "27.5%" },
+    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391231/Barkur_details.png",
+    position: { left: "35%", top: "32%" },
   },
   {
     name: "Basrur",
@@ -71,8 +88,8 @@ const trails: Trail[] = [
       "The Shree Mahatobar Mahalingeshwara Temple",
     ],
     note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
-    pictogram: "/images/illustrations/map-logo/Basrur.png",
-    position: { left: "71.5%", top: "73.0%" },
+    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391230/Bull_details.png",
+    position: { left: "30%", top: "15%" },
   },
   {
     name: "Shirva",
@@ -87,8 +104,8 @@ const trails: Trail[] = [
       "The setting of the Siri Paddana (folk epic)",
     ],
     note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
-    pictogram: "/images/illustrations/map-logo/Shirva.png",
-    position: { left: "24.5%", top: "57.5%" },
+    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391221/Shirva_details.png",
+    position: { left: "45%", top: "68%" },
   },
   {
     name: "Moodabidri",
@@ -103,8 +120,8 @@ const trails: Trail[] = [
       "Home to ancient literary traditions such as the Dhavala palm-leaf manuscripts",
     ],
     note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
-    pictogram: "/images/illustrations/map-logo/Moodbidri.png",
-    position: { left: "55.0%", top: "56.5%" },
+    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391225/Moodbidri_details.png",
+    position: { left: "78%", top: "85%" },
   },
   {
     name: "Karkala",
@@ -120,8 +137,8 @@ const trails: Trail[] = [
       "The bazaars dotted with shops run by GSB traders",
     ],
     note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
-    pictogram: "/images/illustrations/map-logo/Karkala.png",
-    position: { left: "84.0%", top: "48.5%" },
+    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391227/Karkala_details.png",
+    position: { left: "75%", top: "60%" },
   },
 ];
 
@@ -138,19 +155,22 @@ const rathaBeedi = {
     "Shops, eateries, and everyday life",
     "Historic buildings and local memory",
   ],
-  pictogram: "/images/illustrations/map-logo/Ratha Beedi.png",
+  pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391223/Ratha_details.png",
 };
 
 export function OfferingExperience() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeTrail = trails[activeIndex];
+  const activeTrailImage = getAllExperiences().find(
+    (experience) => experience.title === activeTrail.name,
+  )?.image;
   const selectTrail = (index: number) => setActiveIndex((index + trails.length) % trails.length);
 
   return (
     <Section id="offerings" as="section" aria-labelledby="offerings-heading" className="border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-base)]">
       <div className="space-y-10">
         <div className="max-w-2xl">
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-brand-primary)]">Our offerings</p>
+          <p className="text-xs font-medium tracking-[0.22em] text-[var(--color-brand-primary)]">Our offerings</p>
           <h1 id="offerings-heading" className="mt-3 text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-6xl">Walking trails of Tulunadu.</h1>
         </div>
 
@@ -171,7 +191,7 @@ export function OfferingExperience() {
           <div className="relative w-full overflow-hidden border border-[var(--color-border-strong)] bg-[#d7bd8c]">
             <Image
               src="/images/illustrations/tulunadu-offering-map.png"
-              alt="Illustrated map showing the six Koral Collective walking trail locations across Tulunadu"
+              alt="Illustrated map showing the seven Koral Collective walking trail locations across Tulunadu"
               width={1536}
               height={1024}
               className="block h-auto w-full"
@@ -180,7 +200,6 @@ export function OfferingExperience() {
             <div className="absolute inset-0" aria-label="Walking trail locations">
               {trails.map((trail, index) => {
                 const isActive = index === activeIndex;
-                const is2Hour = trail.durationHours === 2;
                 return (
                   <button
                     key={trail.name}
@@ -188,20 +207,22 @@ export function OfferingExperience() {
                     onClick={() => selectTrail(index)}
                     aria-label={`Select ${trail.name} trail`}
                     aria-pressed={isActive}
-                    className={`absolute flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 bg-[#f3e8d2]/90 p-1.5 shadow-sm transition duration-200 hover:scale-110 hover:bg-[#fff8eb] focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#742c2a] focus-visible:ring-offset-2 sm:h-12 sm:w-12 ${
-                      isActive
-                        ? `scale-110 ring-4 ${is2Hour ? "border-[#718d53] ring-[#718d53]/30" : "border-[#742c2a] ring-[#742c2a]/25"}`
-                        : "border-[#806553]/80 opacity-90"
-                    }`}
+                    className={`absolute z-10 flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 hover:scale-[1.15] focus-visible:z-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#742c2a] focus-visible:ring-offset-2 ${isActive ? "scale-[1.15] drop-shadow-md z-20" : "opacity-90 hover:opacity-100"
+                      }`}
                     style={trail.position}
                   >
-                    <Image
-                      src={trail.pictogram}
-                      alt=""
-                      width={350}
-                      height={350}
-                      className="h-full w-full object-contain"
-                    />
+                    <div className="relative flex items-center justify-center">
+                      <span className="absolute bottom-full left-1/2 mb-1 -translate-x-1/2 whitespace-nowrap text-xs font-semibold text-[#3d2f2b] drop-shadow-sm sm:mb-1.5 sm:text-sm">
+                        {trail.name}
+                      </span>
+                      <Image
+                        src={trail.pictogram}
+                        alt={`${trail.name} landmark`}
+                        width={180}
+                        height={180}
+                        className="h-14 w-14 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+                      />
+                    </div>
                   </button>
                 );
               })}
@@ -212,7 +233,7 @@ export function OfferingExperience() {
           <article className="border-t border-[var(--color-border-strong)] pt-5" aria-live="polite">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--color-brand-primary)]">
+                <p className="text-xs font-medium tracking-[0.2em] text-[var(--color-brand-primary)]">
                   {activeIndex + 1} / {trails.length}
                 </p>
                 <h2 className="mt-3 text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-5xl">
@@ -220,16 +241,14 @@ export function OfferingExperience() {
                 </h2>
                 <div className="mt-3 flex items-center gap-3">
                   <span
-                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${
-                      activeTrail.durationHours === 2
-                        ? "bg-[#718d53]/15 text-[#3d572d]"
-                        : "bg-[#845f3b]/15 text-[#5a3828]"
-                    }`}
+                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${activeTrail.durationHours === 2
+                      ? "bg-[#718d53]/15 text-[#3d572d]"
+                      : "bg-[#845f3b]/15 text-[#5a3828]"
+                      }`}
                   >
                     <span
-                      className={`h-1.5 w-1.5 rounded-full ${
-                        activeTrail.durationHours === 2 ? "bg-[#718d53]" : "bg-[#845f3b]"
-                      }`}
+                      className={`h-1.5 w-1.5 rounded-full ${activeTrail.durationHours === 2 ? "bg-[#718d53]" : "bg-[#845f3b]"
+                        }`}
                       aria-hidden="true"
                     />
                     {activeTrail.duration}
@@ -238,8 +257,8 @@ export function OfferingExperience() {
                 </div>
               </div>
               <Image
-                src={activeTrail.pictogram}
-                alt=""
+                src={activeTrailImage?.src ?? activeTrail.pictogram}
+                alt={activeTrailImage?.alt ?? ""}
                 width={350}
                 height={350}
                 className="h-14 w-14 shrink-0 object-contain"
@@ -292,11 +311,10 @@ export function OfferingExperience() {
                     onClick={() => selectTrail(index)}
                     aria-label={`Show ${trail.name} trail`}
                     aria-current={index === activeIndex ? "true" : undefined}
-                    className={`h-2.5 w-2.5 rounded-full border border-[var(--color-brand-primary)] transition ${
-                      index === activeIndex
-                        ? "bg-[var(--color-brand-primary)]"
-                        : "bg-transparent opacity-45 hover:opacity-100"
-                    }`}
+                    className={`h-2.5 w-2.5 rounded-full border border-[var(--color-brand-primary)] transition ${index === activeIndex
+                      ? "bg-[var(--color-brand-primary)]"
+                      : "bg-transparent opacity-45 hover:opacity-100"
+                      }`}
                   />
                 ))}
               </div>
@@ -314,7 +332,7 @@ export function OfferingExperience() {
 
         {/* Ratha Beedi — separate offering, not on the map */}
         <div className="border-t border-[var(--color-border-strong)] pt-10">
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-brand-primary)] mb-6">
+          <p className="text-xs font-medium tracking-[0.22em] text-[var(--color-brand-primary)] mb-6">
             Also available
           </p>
           <div className="grid gap-8 sm:grid-cols-[auto_1fr] items-start max-w-3xl">

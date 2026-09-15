@@ -34,7 +34,7 @@ export const experiences: Experience[] = [
     },
 
     image: {
-      src: "/images/offerings/ratha-beedi-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391860/Ratha_beedi.jpg",
       alt: "Ratha Beedi trail in Udupi",
     },
 
@@ -76,7 +76,7 @@ export const experiences: Experience[] = [
     },
 
     image: {
-      src: "/images/offerings/kallianpur-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789392820/Kaliyanpur_1.jpg",
       alt: "Kallianpur trail in coastal Karnataka",
     },
 
@@ -118,7 +118,7 @@ export const experiences: Experience[] = [
     },
 
     image: {
-      src: "/images/offerings/barkur-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789393034/Barkur_1.jpg",
       alt: "Barkur heritage trail in Tulunadu",
     },
 
@@ -160,7 +160,7 @@ export const experiences: Experience[] = [
     },
 
     image: {
-      src: "/images/offerings/basrur-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391816/Basrur.jpg",
       alt: "Basrur heritage trail",
     },
 
@@ -202,7 +202,7 @@ export const experiences: Experience[] = [
     },
 
     image: {
-      src: "/images/offerings/moodabidri-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789392645/Moodbidri_website_1.jpg",
       alt: "Moodabidri Jain heritage trail",
     },
 
@@ -244,7 +244,7 @@ export const experiences: Experience[] = [
     },
 
     image: {
-      src: "/images/offerings/karkala-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789394062/Gomateshwara_Karkala.jpg",
       alt: "Karkala Jain heritage trail",
     },
 
@@ -286,7 +286,7 @@ export const experiences: Experience[] = [
     },
 
     image: {
-      src: "/images/offerings/shirva-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391935/Shirva.jpg",
       alt: "Shirva cultural walking trail",
     },
 

@@ -89,7 +89,7 @@ export function Faqs() {
     >
       <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-brand-primary)]">
+          <p className="text-xs font-medium tracking-[0.22em] text-[var(--color-brand-primary)]">
             Before you arrive
           </p>
           <h2
