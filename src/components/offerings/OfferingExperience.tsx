@@ -212,7 +212,11 @@ export function OfferingExperience() {
                     style={trail.position}
                   >
                     <div className="relative flex items-center justify-center">
-                      <span className="absolute bottom-full left-1/2 mb-1 -translate-x-1/2 whitespace-nowrap text-xs font-semibold text-[#3d2f2b] drop-shadow-sm sm:mb-1.5 sm:text-sm">
+                      <span
+                        className={`absolute bottom-full mb-1 -translate-x-1/2 whitespace-nowrap text-xs font-semibold text-[#3d2f2b] drop-shadow-sm sm:mb-1.5 sm:text-sm ${
+                          trail.name === "Ratha Beedi" ? "left-[calc(50%-1.5rem)]" : "left-1/2"
+                        }`}
+                      >
                         {trail.name}
                       </span>
                       <Image
