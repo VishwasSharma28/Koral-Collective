@@ -40,7 +40,7 @@ const trails: Trail[] = [
     leader: "Leslie J Dias",
     leaderHref: "/team",
     pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391228/Church_details.png",
-    position: { left: "22%", top: "45%" },
+    position: { left: "34%", top: "45%" },
   },
   {
     name: "Ratha Beedi",
@@ -231,12 +231,21 @@ export function OfferingExperience() {
 
           {/* DETAIL PANEL */}
           <article className="border-t border-[var(--color-border-strong)] pt-5" aria-live="polite">
+            <div className="relative mb-8 aspect-[16/9] w-full overflow-hidden bg-[#d9c9b2]">
+              <Image
+                src={activeTrailImage?.src ?? activeTrail.pictogram}
+                alt={activeTrailImage?.alt ?? ""}
+                fill
+                sizes="(min-width: 1280px) 34vw, (min-width: 1024px) 40vw, 100vw"
+                className="object-contain"
+              />
+            </div>
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs font-medium tracking-[0.2em] text-[var(--color-brand-primary)]">
                   {activeIndex + 1} / {trails.length}
                 </p>
-                <h2 className="mt-3 text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-5xl">
+                <h2 className="mt-3 text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl">
                   {activeTrail.name} trail
                 </h2>
                 <div className="mt-3 flex items-center gap-3">
@@ -256,19 +265,12 @@ export function OfferingExperience() {
                   <span className="text-sm text-[var(--color-text-muted)]">{activeTrail.price}</span>
                 </div>
               </div>
-              <Image
-                src={activeTrailImage?.src ?? activeTrail.pictogram}
-                alt={activeTrailImage?.alt ?? ""}
-                width={350}
-                height={350}
-                className="h-14 w-14 shrink-0 object-contain"
-              />
             </div>
 
-            <p className="mt-6 text-base leading-relaxed text-[var(--color-text-muted)]">{activeTrail.description}</p>
+            <p className="mt-6 text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">{activeTrail.description}</p>
 
             <p className="mt-6 text-sm font-semibold text-[var(--color-text-primary)]">Highlights along the trail:</p>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[var(--color-text-muted)] sm:text-base">
               {activeTrail.highlights.map((highlight) => (
                 <li key={highlight} className="flex gap-2">
                   <span aria-hidden="true">•</span>

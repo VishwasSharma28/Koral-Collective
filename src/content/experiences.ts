@@ -28,7 +28,7 @@ export const experiences: Experience[] = [
 
     map: {
       x: 38,
-      y: 58,
+      y: 56,
       label: "Ratha Beedi",
       icon: `${MAP_LOGO_PATH}/IMG_4267.png`,
     },
@@ -69,8 +69,8 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 28,
-      y: 43,
+      x: 38,
+      y: 39,
       label: "Kallianpur",
       icon: `${MAP_LOGO_PATH}/IMG_4268.png`,
     },
@@ -111,8 +111,8 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 48,
-      y: 50,
+      x: 36,
+      y: 28,
       label: "Barkur",
       icon: `${MAP_LOGO_PATH}/IMG_4269.png`,
     },
@@ -153,8 +153,8 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 20,
-      y: 30,
+      x: 29,
+      y: 17,
       label: "Basrur",
       icon: `${MAP_LOGO_PATH}/IMG_4270.png`,
     },
@@ -195,8 +195,8 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 62,
-      y: 67,
+      x: 72,
+      y: 74,
       label: "Moodabidri",
       icon: `${MAP_LOGO_PATH}/IMG_4272.png`,
     },
@@ -237,8 +237,8 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 78,
-      y: 40,
+      x: 74,
+      y: 59,
       label: "Karkala",
       icon: `${MAP_LOGO_PATH}/IMG_4274.png`,
     },
@@ -279,8 +279,8 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 35,
-      y: 72,
+      x: 48,
+      y: 70,
       label: "Shirva",
       icon: `${MAP_LOGO_PATH}/IMG_4275.png`,
     },
