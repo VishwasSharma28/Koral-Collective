@@ -213,8 +213,8 @@ export function OfferingExperience() {
                   >
                     <div className="relative flex items-center justify-center">
                       <span
-                        className={`absolute bottom-full mb-1 -translate-x-1/2 whitespace-nowrap text-xs font-semibold text-[#3d2f2b] drop-shadow-sm sm:mb-1.5 sm:text-sm ${
-                          trail.name === "Ratha Beedi" ? "left-[calc(50%-1.5rem)]" : "left-1/2"
+                        className={`absolute bottom-full mb-1 whitespace-nowrap text-xs font-semibold text-[#3d2f2b] drop-shadow-sm sm:mb-1.5 sm:text-sm ${
+                          trail.name === "Ratha Beedi" ? "right-full mr-3" : "left-1/2 -translate-x-1/2"
                         }`}
                       >
                         {trail.name}
