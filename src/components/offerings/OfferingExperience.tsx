@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Faqs } from "@/components/home/Faqs";
 import { Section } from "@/components/ui/Section";
@@ -145,6 +145,17 @@ export function OfferingExperience() {
     (experience) => experience.title === activeTrail.name,
   )?.image;
   const selectTrail = (index: number) => setActiveIndex((index + trails.length) % trails.length);
+
+  useEffect(() => {
+    const requestedTrail = new URLSearchParams(window.location.search).get("trail");
+    const requestedTrailIndex = trails.findIndex(
+      (trail) => trail.name.toLowerCase().replaceAll(" ", "-") === requestedTrail,
+    );
+
+    if (requestedTrailIndex >= 0) {
+      setActiveIndex(requestedTrailIndex);
+    }
+  }, []);
 
   return (
     <>

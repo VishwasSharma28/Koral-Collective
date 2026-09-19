@@ -8,7 +8,7 @@ export const siteConfig: SiteConfig = {
       phoneE164: "919535196043",
       defaultMessage: "Hello Koral Collective, I would like to enquire.",
     },
-    email: "hello@koralcollective.com",
+    email: "thekoralcollective@gmail.com",
     phone: "+91 9535196043",
     instagram: "https://www.instagram.com/thekoralcollective?stkn=ZHJuY3p4N2FxcTJu",
   },
