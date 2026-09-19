@@ -4,6 +4,7 @@ export const teamContent: TeamContent = {
   title: "About us",
   intro: [
     "The koral collective comprises a multidisciplinary team of scholars and researchers dedicated to sharing the layered histories, lesser-known stories, and living cultures of Tulunadu through cultural excursions and guided walking trails across Udupi and Dakshina Kannada.",
+    "Sheltered at the foot of the Western Ghats and battered by sea and rain, Tulunadu endures in the collective memory of its people and in the stories still told. Its cultural life is animated by traditions unlike any others. You cannot help but return with forgotten secrets of the land and the stories whispered by the trees to the sea in a language older than memory.",
     "We take our name from the koral kattuna parbha, the festival that marks the first paddy harvest of the season, which brings and binds families, faiths, and communities. The koral or paddy is not only nourishment but also inextricably linked to the region’s traditions, rites, festivals, and songs—it is grain and gospel. The paddy stalk in our logo stands for what Tuluvas have always held close: sustenance, prosperity, and reverence for nature.",
   ],
   groups: [
@@ -24,13 +25,6 @@ export const teamContent: TeamContent = {
       title: "Walk leads",
       members: [
         {
-          id: "leslie-j-dias",
-          name: "Leslie J Dias",
-          role: "Architect | Teacher",
-          bio: "Leslie J Dias leads the Kallianpur trail. An architect and teacher with deep roots in the region, he brings an intimate familiarity with Kallianpur's layered history, its built heritage, and the living community that animates its streets.",
-          image: undefined,
-        },
-        {
           id: "murugeshi-t",
           name: "Murugeshi T",
           role: "Professor of Archaeology",
@@ -49,13 +43,6 @@ export const teamContent: TeamContent = {
           name: "Shravya Hegde",
           role: "Architect | Urban Designer",
           bio: "Shravya’s work sits at the intersection of architecture, history, photography, and culture. Informed by Tulunadu’s lore and coastal diversity, she curates meaningful experiences that reward the curious.",
-          image: undefined,
-        },
-        {
-          id: "shridhar-bhat",
-          name: "Shridhar Bhat",
-          role: "Teacher | Local Historian",
-          bio: "Nearly four decades of teaching high school Social studies in Udupi have given Shridhar an intimate familiarity with the region’s past. Beyond the classroom, he has spent years identifying and surveying significant archaeological and historical sites across Kallianpur and Padubidri.",
           image: undefined,
         },
         {
