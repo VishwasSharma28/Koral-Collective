@@ -37,25 +37,25 @@ export function SiteHeader() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b",
         headerActive 
-          ? "bg-[#5A3828] border-[#5A3828] shadow-sm py-0"
-          : "bg-transparent border-transparent py-2"
+          ? "bg-[var(--color-brand-primary)] border-[var(--color-brand-primary)] shadow-sm py-0"
+          : "bg-[var(--color-brand-primary)] border-[var(--color-brand-primary)] py-2"
       )}
     >
-      <Container size="wide">
+      <Container size="full">
         <div className="flex h-20 items-center justify-between">
           {/* Official Logo */}
           <Link
             href="/"
-            className="flex-shrink-0 hover:opacity-85 transition-opacity focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2 rounded-sm"
+            className="mr-auto flex-shrink-0 rounded-sm bg-[#f7f1e3]/90 px-2 py-1 hover:opacity-85 transition-opacity focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2"
             aria-label="Koral Collective — home"
           >
             <Image
               src="/images/branding/koral-collective-logo-transparent.png"
-              alt="the koral collective"
+              alt="The Koral Collective"
               width={120}
               height={120}
               className={cn(
-                "h-16 w-auto object-contain transition-all duration-300",
+                "h-[4.5rem] w-auto object-contain transition-all duration-300",
                 !headerActive && "drop-shadow-md"
               )}
               priority
@@ -64,23 +64,22 @@ export function SiteHeader() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav aria-label="Main navigation" className="hidden md:block">
-            <ul className="flex items-center space-x-8 text-sm font-sans font-medium">
+          <nav aria-label="Main navigation" className="ml-auto hidden md:block">
+            <ul className="flex items-center gap-3 text-sm font-sans font-medium">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
+                const isWhatsApp = item.label === "Book via WhatsApp";
                 return (
                   <li key={item.href}>
                     <Link
                       href={item.href}
                       className={cn(
-                        "transition-colors py-2 border-b-2 tracking-wide",
-                        headerActive 
-                          ? (isActive
-                            ? "border-[var(--color-brand-primary)] text-white"
-                            : "border-transparent text-white hover:text-white")
-                          : (isActive
-                            ? "border-white/80 text-white"
-                            : "border-transparent text-white hover:text-white hover:border-white/30")
+                        "inline-flex items-center rounded-sm border px-3 py-2 tracking-wide transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f3e8d2] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-brand-primary)]",
+                        isWhatsApp
+                          ? "border-[#f3e8d2] bg-[#f3e8d2] text-[var(--color-brand-primary)] hover:bg-[#f8f2d1]"
+                          : isActive
+                            ? "border-[#f3e8d2] bg-white/10 text-white"
+                            : "border-white/45 text-white hover:border-[#f3e8d2] hover:bg-white/10"
                       )}
                       aria-current={isActive ? "page" : undefined}
                     >

@@ -28,13 +28,13 @@ export const experiences: Experience[] = [
 
     map: {
       x: 38,
-      y: 58,
+      y: 56,
       label: "Ratha Beedi",
       icon: `${MAP_LOGO_PATH}/IMG_4267.png`,
     },
 
     image: {
-      src: "/images/offerings/ratha-beedi-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391860/Ratha_beedi.jpg",
       alt: "Ratha Beedi trail in Udupi",
     },
 
@@ -69,14 +69,14 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 28,
-      y: 43,
+      x: 38,
+      y: 39,
       label: "Kallianpur",
       icon: `${MAP_LOGO_PATH}/IMG_4268.png`,
     },
 
     image: {
-      src: "/images/offerings/kallianpur-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789392820/Kaliyanpur_1.jpg",
       alt: "Kallianpur trail in coastal Karnataka",
     },
 
@@ -111,14 +111,14 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 48,
-      y: 50,
+      x: 36,
+      y: 28,
       label: "Barkur",
       icon: `${MAP_LOGO_PATH}/IMG_4269.png`,
     },
 
     image: {
-      src: "/images/offerings/barkur-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789393034/Barkur_1.jpg",
       alt: "Barkur heritage trail in Tulunadu",
     },
 
@@ -153,14 +153,14 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 20,
-      y: 30,
+      x: 29,
+      y: 17,
       label: "Basrur",
       icon: `${MAP_LOGO_PATH}/IMG_4270.png`,
     },
 
     image: {
-      src: "/images/offerings/basrur-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391816/Basrur.jpg",
       alt: "Basrur heritage trail",
     },
 
@@ -195,14 +195,14 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 62,
-      y: 67,
+      x: 72,
+      y: 74,
       label: "Moodabidri",
       icon: `${MAP_LOGO_PATH}/IMG_4272.png`,
     },
 
     image: {
-      src: "/images/offerings/moodabidri-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789392645/Moodbidri_website_1.jpg",
       alt: "Moodabidri Jain heritage trail",
     },
 
@@ -237,14 +237,14 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 78,
-      y: 40,
+      x: 74,
+      y: 59,
       label: "Karkala",
       icon: `${MAP_LOGO_PATH}/IMG_4274.png`,
     },
 
     image: {
-      src: "/images/offerings/karkala-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789394062/Gomateshwara_Karkala.jpg",
       alt: "Karkala Jain heritage trail",
     },
 
@@ -279,14 +279,14 @@ export const experiences: Experience[] = [
     ],
 
     map: {
-      x: 35,
-      y: 72,
+      x: 48,
+      y: 70,
       label: "Shirva",
       icon: `${MAP_LOGO_PATH}/IMG_4275.png`,
     },
 
     image: {
-      src: "/images/offerings/shirva-placeholder.jpg",
+      src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391935/Shirva.jpg",
       alt: "Shirva cultural walking trail",
     },
 

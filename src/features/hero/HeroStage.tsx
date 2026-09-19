@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { getSiteConfig } from "@/content";
 
 export function HeroStage() {
+  const siteConfig = getSiteConfig();
+
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-[#2a1c14]">
       {/* Static background image */}
@@ -28,12 +31,12 @@ export function HeroStage() {
 
           {/* Column 1: Brand identity */}
           <div>
-            <p className="text-xs font-medium tracking-[0.3em] text-[#e2c89a]/80 font-sans mb-6 uppercase">
-              the koral collective
-            </p>
-            <h1 className="font-serif text-5xl font-medium leading-[1.05] text-[#f7f1e3] sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
-              Experience Tulunadu<br />one walk at a time
+            <h1 className="font-serif text-6xl font-medium leading-[1.05] text-[#f7f1e3] sm:text-7xl lg:text-8xl xl:text-[6.5rem]">
+              {siteConfig.name}
             </h1>
+            <p className="mt-6 max-w-xl font-sans text-lg leading-relaxed tracking-wide text-[#e2c89a] sm:text-xl">
+              {siteConfig.tagline}
+            </p>
           </div>
 
           {/* Column 2: Description + CTAs */}

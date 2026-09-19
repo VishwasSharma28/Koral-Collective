@@ -38,7 +38,7 @@ const teamImages: Record<string, string> = {
 
   // Handles the spelling if the content file uses "Tushar".
   "Tushar Yadav":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793424/Thushar_1.jpg",
+    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789390215/WhatsApp_Image_2026-09-14_at_12.56.40_PM.jpg",
 
   "Shravya Hegde":
     "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793422/Shravya.jpg.jpg",
@@ -86,7 +86,7 @@ export function TeamAccordion({ groups }: TeamAccordionProps) {
           The team
         </h2>
 
-        <div className="flex gap-4 text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-text-muted)]">
+        <div className="flex gap-4 text-xs font-medium tracking-[0.14em] text-[var(--color-text-muted)]">
           <button
             type="button"
             onClick={() => setAllOpen(true)}
@@ -113,7 +113,7 @@ export function TeamAccordion({ groups }: TeamAccordionProps) {
         >
           {/* Group label */}
           <div className="pt-8 lg:pr-8">
-            <h3 className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-brand-primary)]">
+            <h3 className="text-xs font-medium tracking-[0.18em] text-[var(--color-brand-primary)]">
               {group.title}
             </h3>
           </div>
@@ -182,7 +182,7 @@ export function TeamAccordion({ groups }: TeamAccordionProps) {
                           />
                         ) : (
                           <div className="flex h-full items-end p-4">
-                            <span className="text-[10px] uppercase tracking-[0.16em] text-[var(--color-text-subtle)]">
+                            <span className="text-[10px] tracking-[0.16em] text-[var(--color-text-subtle)]">
                               Portrait to come
                             </span>
                           </div>

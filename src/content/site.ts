@@ -1,8 +1,8 @@
 import type { NavItem, SiteConfig } from "./types";
 
 export const siteConfig: SiteConfig = {
-  name: "Koral Collective",
-  tagline: "Tulunadu storytelling and experiential culture",
+  name: "The Koral Collective",
+  tagline: "Experience Tulunadu one walk at a time",
   contact: {
     whatsapp: {
       phoneE164: "919535196043",
@@ -10,7 +10,7 @@ export const siteConfig: SiteConfig = {
     },
     email: "hello@koralcollective.com",
     phone: "+91 9535196043",
-    instagram: "https://www.instagram.com/thekoralcollective",
+    instagram: "https://www.instagram.com/thekoralcollective?stkn=ZHJuY3p4N2FxcTJu",
   },
 };
 

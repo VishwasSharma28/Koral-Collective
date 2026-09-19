@@ -14,7 +14,7 @@ export function WalkWithUs() {
     <Section
       as="section"
       aria-labelledby="walk-with-us-heading"
-      className="relative isolate overflow-hidden border-b border-[#3d2419] bg-[#5A3828] text-[var(--color-text-inverse)]"
+      className="relative isolate overflow-hidden border-b border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)] text-[var(--color-text-inverse)]"
     >
       {/* Interactive footprint layer */}
       <FootstepTrail />
@@ -23,7 +23,7 @@ export function WalkWithUs() {
       <div className="relative z-10 grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:gap-20">
         {/* Left content */}
         <div className="max-w-xl">
-          <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#e2b477]">
+          <p className="text-xs font-medium tracking-[0.22em] text-[#e2b477]">
             Make a beginning
           </p>
 
@@ -43,7 +43,7 @@ export function WalkWithUs() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex border-b border-[#e2b477] pb-2 text-xs font-medium uppercase tracking-[0.18em] text-[#f3e8d2] transition-colors hover:text-[#e2b477]"
+            className="mt-8 inline-flex border-b border-[#e2b477] pb-2 text-xs font-medium tracking-[0.18em] text-[#f3e8d2] transition-colors hover:text-[#e2b477]"
           >
             Book via WhatsApp →
           </a>
@@ -55,7 +55,7 @@ export function WalkWithUs() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block w-full border border-[#d7ae78]/60 bg-[#3b2419] p-5 shadow-[12px_12px_0_#3d2116] transition-transform hover:-translate-y-1 sm:p-7"
+            className="group block w-full border border-[#d7ae78]/60 bg-[var(--color-brand-primary)] p-5 shadow-[12px_12px_0_#5A3828] transition-transform hover:-translate-y-1 sm:p-7"
             aria-label="Connect with Koral Collective on WhatsApp"
           >
             {/* Heading */}
@@ -79,7 +79,7 @@ export function WalkWithUs() {
               />
             </div>
 
-            <p className="mt-5 text-center text-[10px] font-medium uppercase tracking-[0.18em] text-[#d8c09e]">
+            <p className="mt-5 text-center text-[10px] font-medium tracking-[0.18em] text-[#d8c09e]">
               Scan to start a conversation
             </p>
           </a>
@@ -89,7 +89,7 @@ export function WalkWithUs() {
             href="/offerings"
             variant="ghost"
             size="md"
-            className="mt-5 w-full bg-[#3b2419] text-white hover:bg-[#2e1a10] hover:text-white"
+            className="mt-5 w-full bg-[var(--color-brand-primary)] text-white hover:bg-[#5A3828] hover:text-white"
           >
             Explore offerings →
           </Button>

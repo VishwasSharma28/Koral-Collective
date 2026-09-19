@@ -180,7 +180,7 @@ export default function OfferingsPage() {
       -------------------------------------------------- */}
       <section className="px-6 pb-12 pt-16 md:px-10 md:pb-16 md:pt-24">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#7c352f]">
+          <p className="mb-4 text-[11px] font-semibold tracking-[0.28em] text-[#7c352f]">
             Our offerings
           </p>
 
@@ -259,7 +259,7 @@ export default function OfferingsPage() {
 
             {/* map heading */}
             <div className="absolute left-6 top-6 md:left-10 md:top-10">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#7c352f]">
+              <p className="text-[10px] font-semibold tracking-[0.24em] text-[#7c352f]">
                 Tulunadu
               </p>
               <p className="mt-1 font-serif text-2xl md:text-3xl">
@@ -268,7 +268,7 @@ export default function OfferingsPage() {
             </div>
 
             {/* north indicator */}
-            <div className="absolute right-6 top-6 flex flex-col items-center text-[9px] font-semibold uppercase tracking-[0.2em] text-[#2e211b]/50 md:right-10 md:top-10">
+            <div className="absolute right-6 top-6 flex flex-col items-center text-[9px] font-semibold tracking-[0.2em] text-[#2e211b]/50 md:right-10 md:top-10">
               <span className="text-sm">↑</span>
               <span>N</span>
             </div>
@@ -335,7 +335,7 @@ export default function OfferingsPage() {
 
                   <span
                     className={[
-                      "absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.12em] transition-all",
+                      "absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap text-[10px] font-semibold tracking-[0.12em] transition-all",
                       active
                         ? "text-[#7c352f]"
                         : "text-[#2e211b]/60 group-hover:text-[#7c352f]",
@@ -348,7 +348,7 @@ export default function OfferingsPage() {
             })}
 
             {/* map legend */}
-            <div className="absolute bottom-6 left-6 flex items-center gap-3 text-[10px] uppercase tracking-[0.14em] text-[#2e211b]/50 md:bottom-10 md:left-10">
+            <div className="absolute bottom-6 left-6 flex items-center gap-3 text-[10px] tracking-[0.14em] text-[#2e211b]/50 md:bottom-10 md:left-10">
               <span className="h-2 w-2 rounded-full bg-[#7c352f]" />
               <span>Trail locations</span>
             </div>
@@ -357,7 +357,7 @@ export default function OfferingsPage() {
           {/* ACTIVE TRAIL */}
           <div className="flex min-h-[560px] flex-col bg-[#f3e8d2]">
             <div className="flex items-center justify-between border-b border-[#2e211b]/15 px-6 py-5 md:px-10">
-              <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#7c352f]">
+                <span className="text-[10px] font-semibold tracking-[0.22em] text-[#7c352f]">
                 Trail {activeTrail.number}
               </span>
 
@@ -376,7 +376,7 @@ export default function OfferingsPage() {
                 {activeTrail.name}
               </h2>
 
-              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs uppercase tracking-[0.12em] text-[#6d5547]">
+              <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs tracking-[0.12em] text-[#6d5547]">
                 <span>{activeTrail.duration}</span>
                 <span className="text-[#2e211b]/30">•</span>
                 <span>{activeTrail.price}</span>
@@ -387,7 +387,7 @@ export default function OfferingsPage() {
               </p>
 
               <div className="mt-8">
-                <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#7c352f]">
+                <p className="mb-4 text-[10px] font-semibold tracking-[0.2em] text-[#7c352f]">
                   Highlights along the trail
                 </p>
 
@@ -405,7 +405,7 @@ export default function OfferingsPage() {
               </div>
 
               <div className="mt-auto border-t border-[#2e211b]/15 pt-6">
-                <p className="text-[10px] uppercase tracking-[0.18em] text-[#6d5547]">
+                <p className="text-[10px] tracking-[0.18em] text-[#6d5547]">
                   Walk led by
                 </p>
 
@@ -421,7 +421,7 @@ export default function OfferingsPage() {
                 <button
                   type="button"
                   onClick={previousTrail}
-                  className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#2e211b] transition-colors hover:text-[#7c352f]"
+                  className="flex items-center gap-2 text-xs font-semibold tracking-[0.16em] text-[#2e211b] transition-colors hover:text-[#7c352f]"
                 >
                   <span className="text-lg">←</span>
                   Previous
@@ -448,7 +448,7 @@ export default function OfferingsPage() {
                 <button
                   type="button"
                   onClick={nextTrail}
-                  className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#2e211b] transition-colors hover:text-[#7c352f]"
+                  className="flex items-center gap-2 text-xs font-semibold tracking-[0.16em] text-[#2e211b] transition-colors hover:text-[#7c352f]"
                 >
                   Next
                   <span className="text-lg">→</span>
@@ -466,7 +466,7 @@ export default function OfferingsPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#7c352f]">
+              <p className="mb-3 text-[10px] font-semibold tracking-[0.24em] text-[#7c352f]">
                 Explore the trails
               </p>
 
@@ -506,7 +506,7 @@ export default function OfferingsPage() {
                       {trail.name}
                     </span>
 
-                    <span className="mt-1 block text-xs uppercase tracking-[0.13em] text-[#6d5547]">
+                    <span className="mt-1 block text-xs tracking-[0.13em] text-[#6d5547]">
                       {trail.duration}
                     </span>
                   </span>
@@ -534,7 +534,7 @@ export default function OfferingsPage() {
               className="flex w-full items-center justify-between border-y border-[#2e211b]/20 py-5 text-left"
             >
               <span>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-[#7c352f]">
+                  <span className="block text-[10px] tracking-[0.2em] text-[#7c352f]">
                   Selected trail
                 </span>
 
@@ -584,7 +584,7 @@ export default function OfferingsPage() {
       -------------------------------------------------- */}
       <section className="bg-[#2e211b] px-6 py-20 text-[#f3e8d2] md:px-10 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#d7a35d]">
+          <p className="text-[10px] font-semibold tracking-[0.25em] text-[#d7a35d]">
             Walk with us
           </p>
 
@@ -599,7 +599,7 @@ export default function OfferingsPage() {
               href="https://wa.me/919535196043"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-fit items-center gap-4 border border-[#f3e8d2]/30 px-6 py-4 text-xs font-semibold uppercase tracking-[0.16em] transition-colors hover:bg-[#f3e8d2] hover:text-[#2e211b]"
+              className="inline-flex w-fit items-center gap-4 border border-[#f3e8d2]/30 px-6 py-4 text-xs font-semibold tracking-[0.16em] transition-colors hover:bg-[#f3e8d2] hover:text-[#2e211b]"
             >
               Chat on WhatsApp
               <span className="text-lg">↗</span>

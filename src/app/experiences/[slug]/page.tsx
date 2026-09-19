@@ -92,7 +92,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
 
           {/* Offering context label */}
           {parentOffering && (
-            <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/50 mb-4">
+            <p className="text-[11px] font-semibold tracking-[0.25em] text-white/50 mb-4">
               {parentOffering.title}
             </p>
           )}
@@ -144,7 +144,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
             <section aria-labelledby="experience-description-heading">
               <h2
                 id="experience-description-heading"
-                className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-muted)]"
+                className="mb-4 text-xs font-semibold tracking-widest text-[var(--color-text-muted)]"
               >
                 About this experience
               </h2>
@@ -158,7 +158,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
               <section aria-labelledby="experience-highlights-heading">
                 <h2
                   id="experience-highlights-heading"
-                  className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-muted)]"
+                  className="mb-4 text-xs font-semibold tracking-widest text-[var(--color-text-muted)]"
                 >
                   What&apos;s included
                 </h2>
@@ -197,7 +197,7 @@ export default async function ExperiencePage({ params }: ExperiencePageProps) {
           <aside aria-label="Enquire about this experience">
             <div className="sticky top-24 rounded-[var(--radius-lg)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-surface)] p-7 shadow-sm space-y-6">
               <div className="space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-muted)]">
+                <p className="text-xs font-semibold tracking-widest text-[var(--color-text-muted)]">
                   Interested?
                 </p>
                 <h3 className="font-serif text-xl font-medium text-[var(--color-text-primary)] leading-snug">
