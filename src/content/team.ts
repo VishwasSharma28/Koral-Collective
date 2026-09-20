@@ -104,6 +104,6 @@ export const teamContent: TeamContent = {
   ],
   seo: {
     title: "About us",
-    description: "Meet the Koral Collective team.",
+    description: "Meet the koral collective team.",
   },
 };

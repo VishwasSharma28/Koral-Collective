@@ -53,7 +53,7 @@ const trails: Trail[] = [
       "Religious and architectural landmarks",
       "Stories of everyday Kallianpur",
     ],
-    leader: "Koral Collective",
+    leader: "the koral collective",
     duration: "Approx. 90 mins",
     price: "Contact for pricing",
     x: 25,
@@ -74,7 +74,7 @@ const trails: Trail[] = [
       "Historic structures",
       "Layers of cultural memory",
     ],
-    leader: "Koral Collective",
+    leader: "the koral collective",
     duration: "Approx. 2 hrs",
     price: "Contact for pricing",
     x: 21,
@@ -95,7 +95,7 @@ const trails: Trail[] = [
       "Temple architecture",
       "Layers of maritime trade",
     ],
-    leader: "Koral Collective",
+    leader: "the koral collective",
     duration: "Approx. 2 hrs",
     price: "Contact for pricing",
     x: 39,
@@ -116,7 +116,7 @@ const trails: Trail[] = [
       "Kathale Basadi complex",
       "Ancient shrines and structures",
     ],
-    leader: "Koral Collective",
+    leader: "the koral collective",
     duration: "Approx. 2 hrs",
     price: "Contact for pricing",
     x: 49,
@@ -137,7 +137,7 @@ const trails: Trail[] = [
       "Ancient townscape",
       "Bamboo-grove landscape",
     ],
-    leader: "Koral Collective",
+    leader: "the koral collective",
     duration: "Approx. 2 hrs",
     price: "Contact for pricing",
     x: 67,
@@ -153,7 +153,7 @@ export default function OfferingsPage() {
   const activeTrail = trails[activeIndex];
 
   useEffect(() => {
-    document.title = "Our Offerings | Koral Collective";
+    document.title = "Our Offerings | the koral collective";
   }, []);
 
   const selectTrail = (index: number) => {

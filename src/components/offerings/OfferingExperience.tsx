@@ -182,7 +182,7 @@ export function OfferingExperience() {
           <div className="relative w-full overflow-hidden border border-[var(--color-border-strong)] bg-[#d7bd8c]">
             <Image
               src="/images/illustrations/tulunadu-offering-map.png"
-              alt="Illustrated map showing the seven Koral Collective walking trail locations across Tulunadu"
+              alt="Illustrated map showing the seven the koral collective walking trail locations across Tulunadu"
               width={1536}
               height={1024}
               className="block h-auto w-full"

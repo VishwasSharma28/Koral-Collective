@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { getSiteConfig } from "@/content";
 
@@ -14,40 +13,25 @@ export function WalkWithUs() {
     <Section
       as="section"
       aria-labelledby="walk-with-us-heading"
-      className="relative isolate overflow-hidden border-b border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)] py-5 text-[var(--color-text-inverse)] sm:py-7 lg:py-9"
+      className="relative isolate overflow-hidden border-b border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)] py-4 text-[var(--color-text-inverse)] sm:py-6 lg:py-8"
     >
-      {/* Interactive footprint layer */}
-      <FootstepTrail />
-
       {/* Main content stays above the footprint trail */}
-      <div className="relative z-10 grid gap-5 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:gap-8">
+      <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:gap-12">
         {/* Left content */}
         <div className="max-w-xl">
-          <p className="text-xs font-medium tracking-[0.22em] text-[#e2b477]">
-            Make a beginning
-          </p>
-
           <h2
             id="walk-with-us-heading"
-            className="mt-3 text-5xl font-serif font-medium leading-none text-[#f3e8d2] sm:text-7xl"
+            className="text-5xl font-serif font-medium leading-none text-[#f3e8d2] sm:text-7xl"
           >
             Walk with us
           </h2>
 
-          <p className="mt-4 max-w-lg text-base leading-relaxed text-[#ecd9bd] sm:text-lg">
-            Connect with Koral Collective to enquire, plan a visit, or find
-            the experience that fits your pace.
-          </p>
-        </div>
-
-        {/* WhatsApp QR card */}
-        <div className="mx-auto w-full max-w-xs">
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block w-full border border-[#d7ae78]/60 bg-[var(--color-brand-primary)] p-4 shadow-[12px_12px_0_#5A3828] transition-transform hover:-translate-y-1 sm:p-5"
-            aria-label="Connect with Koral Collective on WhatsApp"
+            className="group mt-5 block w-full max-w-xs border border-[#d7ae78]/60 bg-[var(--color-brand-primary)] p-4 shadow-[12px_12px_0_#5A3828] transition-transform hover:-translate-y-1 sm:p-4"
+            aria-label="Connect with the koral collective on WhatsApp"
           >
             <div className="flex justify-end text-[#f3e8d2]">
               <span className="text-xl text-[#e2b477] transition-transform group-hover:translate-x-1">
@@ -55,11 +39,10 @@ export function WalkWithUs() {
               </span>
             </div>
 
-            {/* WhatsApp QR */}
             <div className="mx-auto mt-2 aspect-square w-44 overflow-hidden bg-[#f3e8d2] p-2 sm:w-52">
               <Image
                 src="/images/branding/whatsapp-qr.png"
-                alt="Scan to connect with Koral Collective on WhatsApp"
+                alt="Scan to connect with the koral collective on WhatsApp"
                 width={520}
                 height={520}
                 className="h-full w-full object-contain"
@@ -71,16 +54,11 @@ export function WalkWithUs() {
               Scan to start a conversation
             </p>
           </a>
+        </div>
 
-          {/* Explore offerings */}
-          <Button
-            href="/offerings"
-            variant="ghost"
-            size="md"
-            className="mt-4 w-full bg-[var(--color-brand-primary)] text-white hover:bg-[#5A3828] hover:text-white"
-          >
-            Explore offerings →
-          </Button>
+        {/* Interactive footprint layer */}
+        <div className="relative min-h-56 lg:min-h-72">
+          <FootstepTrail />
         </div>
       </div>
     </Section>

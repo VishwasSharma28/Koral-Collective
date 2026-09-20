@@ -1,7 +1,7 @@
 import type { NavItem, SiteConfig } from "./types";
 
 export const siteConfig: SiteConfig = {
-  name: "The Koral Collective",
+  name: "the koral collective",
   tagline: "Experience Tulunadu one walk at a time",
   contact: {
     whatsapp: {

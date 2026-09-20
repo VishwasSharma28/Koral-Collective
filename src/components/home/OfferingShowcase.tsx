@@ -112,7 +112,7 @@ export function OfferingShowcase() {
           onKeyDown={handleKeyDown}
           tabIndex={0}
           className="flex snap-x snap-mandatory items-end gap-4 overflow-x-auto overscroll-x-contain pb-8 pt-6 scrollbar-none sm:gap-6"
-          aria-label="Koral Collective offerings"
+          aria-label="the koral collective offerings"
         >
           {experiences.map((experience, index) => (
             <Link
