@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,19 +11,34 @@ import { cn } from "@/lib/cn";
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const navItems = getNavItems();
   const isHome = pathname === "/";
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header 
+    <header
       className={cn(
-        "fixed left-0 right-0 top-0 z-50",
-        isHome ? "bg-transparent" : "bg-[var(--color-bg-base)]",
+        "fixed left-0 right-0 top-0 z-50 transition-colors duration-300",
+        isHome && !scrolled ? "bg-transparent" : "bg-[var(--color-bg-base)] shadow-[0_1px_2px_rgba(0,0,0,0.05)]",
       )}
     >
       <Container size="full">
-        <div className="flex min-h-20 items-center justify-between gap-4 py-1">
+        <div
+          className={cn(
+            "flex items-center justify-between gap-4 transition-all duration-300",
+            scrolled ? "min-h-16 py-1" : "min-h-24 sm:min-h-32 py-2"
+          )}
+        >
           {/* Official Logo */}
           <Link
             href="/"
@@ -33,9 +48,12 @@ export function SiteHeader() {
             <Image
               src="/images/branding/koral-collective-logo-transparent.png"
               alt="The Koral Collective"
-              width={120}
-              height={120}
-              className="h-16 w-auto object-contain sm:h-[4.5rem]"
+              width={200}
+              height={200}
+              className={cn(
+                "w-auto object-contain object-left-top transition-all duration-300",
+                scrolled ? "h-12 sm:h-14" : "h-20 sm:h-[6.5rem]"
+              )}
               priority
               unoptimized
             />

@@ -15,7 +15,6 @@ export default function TeamPage() {
   return (
     <Container size="default" className="py-16 sm:py-24">
       <header className="max-w-4xl border-b border-[var(--color-border-strong)] pb-12 sm:pb-16">
-        <p className="text-xs font-medium tracking-[0.22em] text-[var(--color-brand-primary)]">About us</p>
         <h1 className="mt-4 text-5xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-7xl">
           {team.title}
         </h1>
