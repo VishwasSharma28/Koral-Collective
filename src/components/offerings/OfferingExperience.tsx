@@ -168,7 +168,7 @@ export function OfferingExperience() {
         {/* Duration legend */}
         <div className="flex flex-wrap gap-4 text-xs">
           <span className="inline-flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-[#718d53]" aria-hidden="true" />
+            <span className="inline-block h-2 w-2 rounded-full bg-[#845f3b]" aria-hidden="true" />
             <span className="text-[var(--color-text-muted)]">2-hour walk</span>
           </span>
           <span className="inline-flex items-center gap-2">
