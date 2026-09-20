@@ -19,7 +19,7 @@ export function SiteHeader() {
     <header 
       className={cn(
         "fixed left-0 right-0 top-0 z-50",
-        isHome ? "bg-transparent" : "border-b border-[#f7f1e3] bg-[#f7f1e3] shadow-sm",
+        isHome ? "bg-transparent" : "bg-[var(--color-bg-base)]",
       )}
     >
       <Container size="full">
@@ -35,7 +35,7 @@ export function SiteHeader() {
               alt="The Koral Collective"
               width={120}
               height={120}
-              className="h-14 w-auto object-contain sm:h-16"
+              className="h-16 w-auto object-contain sm:h-[4.5rem]"
               priority
               unoptimized
             />
