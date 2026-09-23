@@ -12,9 +12,11 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <Container className="py-12">
-      <h1 className="text-3xl font-medium">{about.title}</h1>
-      <p className="mt-4 max-w-2xl text-neutral-600">{about.intro}</p>
-    </Container>
+    <div className="offerings-parchment">
+      <Container className="py-12">
+        <h1 className="text-3xl font-medium">{about.title}</h1>
+        <p className="mt-4 max-w-2xl text-neutral-600">{about.intro}</p>
+      </Container>
+    </div>
   );
 }

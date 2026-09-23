@@ -158,7 +158,7 @@ export function OfferingExperience() {
   }, []);
 
   return (
-    <>
+    <div className="offerings-parchment">
       <Section
         id="offerings"
         as="section"
@@ -331,6 +331,6 @@ export function OfferingExperience() {
         </div>
       </Section>
       <Faqs />
-    </>
+    </div>
   );
 }

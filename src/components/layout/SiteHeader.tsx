@@ -60,8 +60,8 @@ export function SiteHeader() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav aria-label="Main navigation" className="ml-auto hidden md:block">
-            <ul className="flex items-center gap-7 text-base font-sans font-medium">
+          <nav aria-label="Main navigation" className="ml-auto mr-8 hidden lg:mr-16 md:block">
+            <ul className="flex items-center gap-10 text-xl font-sans font-semibold">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
                 const isWhatsApp = item.label === "Book via WhatsApp";
@@ -91,7 +91,7 @@ export function SiteHeader() {
           <button
             type="button"
             className={cn(
-              "inline-flex items-center justify-center rounded-md p-2 text-[#022e01] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#022e01] md:hidden",
+              "inline-flex items-center justify-center rounded-md p-3 text-[#022e01] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#022e01] md:hidden",
               "hover:bg-[#022e01]/10"
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -100,7 +100,7 @@ export function SiteHeader() {
             aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
           >
             <svg
-              className="h-6 w-6"
+              className="h-7 w-7"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
@@ -128,7 +128,7 @@ export function SiteHeader() {
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={cn(
-                        "block rounded-md px-3 py-2 text-base font-sans font-medium text-[#022e01] transition-colors",
+                        "block rounded-md px-4 py-3 text-lg font-sans font-semibold text-[#022e01] transition-colors",
                         isActive
                           ? "bg-[#022e01]/10"
                           : "hover:bg-[#022e01]/10"

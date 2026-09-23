@@ -15,6 +15,8 @@ export function WalkWithUs() {
       aria-labelledby="walk-with-us-heading"
       className="relative isolate overflow-hidden border-b border-[var(--color-brand-primary)] bg-[var(--color-brand-primary)] py-4 text-[var(--color-text-inverse)] sm:py-6 lg:py-8"
     >
+      <FootstepTrail />
+
       {/* Main content stays above the footprint trail */}
       <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-center lg:gap-12">
         {/* Left content */}
@@ -56,9 +58,8 @@ export function WalkWithUs() {
           </a>
         </div>
 
-        {/* Interactive footprint layer */}
+        {/* Visual breathing room for the full-panel footprint interaction */}
         <div className="relative min-h-56 lg:min-h-72">
-          <FootstepTrail />
         </div>
       </div>
     </Section>

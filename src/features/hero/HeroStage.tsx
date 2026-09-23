@@ -5,27 +5,43 @@ import Link from "next/link";
 
 export function HeroStage() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-[#2a1c14]">
-      {/* Static background image */}
-      <Image
-        src="/images/tulunadu-landscape.jpeg"
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover object-center"
-        priority
-        aria-hidden="true"
-      />
+    <div className="relative w-full overflow-hidden bg-[var(--color-bg-base)] flex flex-col justify-center">
+
+      {/* Mobile background (full aspect ratio preserved) */}
+      <div className="block sm:hidden w-full leading-none z-0">
+        <Image
+          src="/images/tulunadu-parchment-panorama.png"
+          alt=""
+          width={2039}
+          height={771}
+          className="w-full h-auto block"
+          priority
+          aria-hidden="true"
+        />
+      </div>
+
+      {/* Desktop background (full aspect ratio preserved) */}
+      <div className="hidden sm:block relative w-full leading-none z-0">
+        <Image
+          src="/images/tulunadu-parchment-panorama.png"
+          alt=""
+          width={2039}
+          height={771}
+          className="w-full h-auto object-contain block"
+          priority
+          aria-hidden="true"
+        />
+      </div>
 
       {/* Primary hero content */}
-      <div className="relative z-10 flex min-h-screen items-center px-6 sm:px-10 lg:px-16 xl:px-24">
-        <div className="mx-auto w-full max-w-7xl py-32 sm:py-36">
+      <div className="relative sm:absolute sm:inset-0 z-10 flex h-full items-center px-6 sm:px-10 lg:px-16 xl:px-24">
+        <div className="mx-auto w-full max-w-7xl pt-8 pb-16 sm:py-0">
           <div className="max-w-2xl space-y-8">
             <div>
-              <h1 className="font-serif text-4xl font-medium leading-snug text-[#5A3828] [text-shadow:0_1px_0_rgba(247,241,227,0.55)] sm:text-5xl">
+              <h1 className="font-serif text-4xl font-semibold leading-snug text-[#160d08] [text-shadow:0_1px_0_rgba(247,237,219,0.8)] sm:text-5xl">
                 Walk the textures of Tulunadu threaded through time
               </h1>
-              <p className="mt-5 font-sans text-base leading-relaxed text-[#5A3828] [text-shadow:0_1px_0_rgba(247,241,227,0.55)] sm:text-lg">
+              <p className="mt-5 max-w-2xl font-sans text-base font-medium leading-relaxed text-[#28150d] sm:text-lg">
                 For those who travel in unhurried grace, we invite you to experience a Tulunadu rarely seen, through immersive walking tours led by historians, archaeologists, and architects.
               </p>
             </div>
@@ -49,7 +65,7 @@ export function HeroStage() {
       </div>
 
       {/* Fade to page bg at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[var(--color-bg-base)] to-transparent z-20" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--color-bg-base)] to-transparent z-20" />
     </div>
   );
 }
