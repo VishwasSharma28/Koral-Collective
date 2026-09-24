@@ -39,6 +39,14 @@ h6 {
   font-family: var(--font-display);
 }
 
+.offerings-parchment {
+  background-color: #f5ead4;
+  background-image: url("/images/tulunadu-offerings-parchment.png");
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+
 /* Accessibility focus indicator styling */
 :focus-visible {
   outline: 2px solid var(--color-brand-primary);

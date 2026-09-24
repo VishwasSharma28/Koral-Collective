@@ -35,7 +35,7 @@ export function BrandStory() {
               Sheltered at the foot of the Western Ghats and battered by sea and rain, Tulunadu endures in the collective memory of its people and in the stories still told. Its cultural life is animated by traditions unlike any others. To those who are willing to travel in unhurried grace, Tulunadu unravels its aura, living cultures, cuisines, and heritage.
             </p>
             <p>
-              The koral collective invites you to experience a Tulunadu rarely seen, through curated walking tours led by historians, archaeologists, anthropologists, architects, and social scientists. You cannot help but return with forgotten secrets of the land and the stories whispered by the trees to the sea in a language older than memory.
+              the koral collective invites you to experience a Tulunadu rarely seen, through curated walking tours led by historians, archaeologists, anthropologists, architects, and social scientists. You cannot help but return with forgotten secrets of the land and the stories whispered by the trees to the sea in a language older than memory.
             </p>
           </div>
         </div>

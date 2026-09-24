@@ -110,7 +110,7 @@ export function FootstepTrail() {
             const mouseX = event.clientX;
             const mouseY = event.clientY;
 
-            // Only create footprints inside Walk With Us.
+            // Only create footprints inside the trail area.
             if (
                 mouseX < rect.left ||
                 mouseX > rect.right ||

@@ -39,9 +39,9 @@ export const experiences: Experience[] = [
     },
 
     seo: {
-      title: "Ratha Beedi Walking Trail | Koral Collective",
+      title: "Ratha Beedi Walking Trail | the koral collective",
       description:
-        "Explore Ratha Beedi in Udupi through a curated cultural walking trail with Koral Collective.",
+        "Explore Ratha Beedi in Udupi through a curated cultural walking trail with the koral collective.",
     },
   },
 
@@ -81,9 +81,9 @@ export const experiences: Experience[] = [
     },
 
     seo: {
-      title: "Kallianpur Walking Trail | Koral Collective",
+      title: "Kallianpur Walking Trail | the koral collective",
       description:
-        "Walk through Kallianpur's coastal history, Portuguese heritage, faith, and living community with Koral Collective.",
+        "Walk through Kallianpur's coastal history, Portuguese heritage, faith, and living community with the koral collective.",
     },
   },
 
@@ -123,9 +123,9 @@ export const experiences: Experience[] = [
     },
 
     seo: {
-      title: "Barkur Heritage Walking Trail | Koral Collective",
+      title: "Barkur Heritage Walking Trail | the koral collective",
       description:
-        "Discover Barkur's royal, trading, architectural, and cultural history through a curated Koral Collective trail.",
+        "Discover Barkur's royal, trading, architectural, and cultural history through a curated the koral collective trail.",
     },
   },
 
@@ -165,9 +165,9 @@ export const experiences: Experience[] = [
     },
 
     seo: {
-      title: "Basrur Heritage Walking Trail | Koral Collective",
+      title: "Basrur Heritage Walking Trail | the koral collective",
       description:
-        "Explore Basrur's maritime history, merchant quarters, colonial encounters, and temple heritage with Koral Collective.",
+        "Explore Basrur's maritime history, merchant quarters, colonial encounters, and temple heritage with the koral collective.",
     },
   },
 
@@ -207,9 +207,9 @@ export const experiences: Experience[] = [
     },
 
     seo: {
-      title: "Moodabidri Heritage Walking Trail | Koral Collective",
+      title: "Moodabidri Heritage Walking Trail | the koral collective",
       description:
-        "Explore Moodabidri's Jain temples, architecture, royal history, and literary traditions with Koral Collective.",
+        "Explore Moodabidri's Jain temples, architecture, royal history, and literary traditions with the koral collective.",
     },
   },
 
@@ -249,9 +249,9 @@ export const experiences: Experience[] = [
     },
 
     seo: {
-      title: "Karkala Jain Heritage Trail | Koral Collective",
+      title: "Karkala Jain Heritage Trail | the koral collective",
       description:
-        "Walk through Karkala's Jain heritage, monumental stone architecture, and living traditions with Koral Collective.",
+        "Walk through Karkala's Jain heritage, monumental stone architecture, and living traditions with the koral collective.",
     },
   },
 
@@ -291,9 +291,9 @@ export const experiences: Experience[] = [
     },
 
     seo: {
-      title: "Shirva Cultural Walking Trail | Koral Collective",
+      title: "Shirva Cultural Walking Trail | the koral collective",
       description:
-        "Discover Shirva's megalithic heritage, rural landscapes, ritual traditions, and living culture with Koral Collective.",
+        "Discover Shirva's megalithic heritage, rural landscapes, ritual traditions, and living culture with the koral collective.",
     },
   },
 
@@ -332,9 +332,9 @@ export const experiences: Experience[] = [
     },
 
     seo: {
-      title: "Coastal Tulunadu Experience | Koral Collective",
+      title: "Coastal Tulunadu Experience | the koral collective",
       description:
-        "Experience the landscapes, heritage, food, communities, and living traditions of coastal Tulunadu with Koral Collective.",
+        "Experience the landscapes, heritage, food, communities, and living traditions of coastal Tulunadu with the koral collective.",
     },
   },
 ];

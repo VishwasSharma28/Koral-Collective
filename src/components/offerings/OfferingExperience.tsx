@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Faqs } from "@/components/home/Faqs";
 import { Section } from "@/components/ui/Section";
@@ -146,176 +146,191 @@ export function OfferingExperience() {
   )?.image;
   const selectTrail = (index: number) => setActiveIndex((index + trails.length) % trails.length);
 
+  useEffect(() => {
+    const requestedTrail = new URLSearchParams(window.location.search).get("trail");
+    const requestedTrailIndex = trails.findIndex(
+      (trail) => trail.name.toLowerCase().replaceAll(" ", "-") === requestedTrail,
+    );
+
+    if (requestedTrailIndex >= 0) {
+      setActiveIndex(requestedTrailIndex);
+    }
+  }, []);
+
   return (
-    <>
-      <Section id="offerings" as="section" aria-labelledby="offerings-heading" className="border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-base)]">
-      <div className="space-y-10">
-        <div className="max-w-2xl">
-          <h1 id="offerings-heading" className="text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-6xl">Offerings</h1>
-        </div>
-
-        {/* Duration legend */}
-        <div className="flex flex-wrap gap-4 text-xs">
-          <span className="inline-flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-[#718d53]" aria-hidden="true" />
-            <span className="text-[var(--color-text-muted)]">2-hour walk</span>
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-[#845f3b]" aria-hidden="true" />
-            <span className="text-[var(--color-text-muted)]">6-hour excursion (transport included)</span>
-          </span>
-        </div>
-
-        <div className="grid items-start gap-8 xl:grid-cols-[minmax(0,1.15fr)_minmax(24rem,0.85fr)] xl:gap-12">
-          {/* MAP */}
-          <div className="relative w-full overflow-hidden border border-[var(--color-border-strong)] bg-[#d7bd8c]">
-            <Image
-              src="/images/illustrations/tulunadu-offering-map.png"
-              alt="Illustrated map showing the seven Koral Collective walking trail locations across Tulunadu"
-              width={1536}
-              height={1024}
-              className="block h-auto w-full"
-              priority
-            />
-            <div className="absolute inset-0" aria-label="Walking trail locations">
-              {trails.map((trail, index) => {
-                const isActive = index === activeIndex;
-                return (
-                  <button
-                    key={trail.name}
-                    type="button"
-                    onClick={() => selectTrail(index)}
-                    aria-label={`Select ${trail.name} trail`}
-                    aria-pressed={isActive}
-                    className={`absolute z-10 flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 hover:scale-[1.15] focus-visible:z-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#742c2a] focus-visible:ring-offset-2 ${isActive ? "scale-[1.15] drop-shadow-md z-20" : "opacity-90 hover:opacity-100"
-                      }`}
-                    style={trail.position}
-                  >
-                    <div className="relative flex items-center justify-center">
-                      <span
-                        className={`absolute bottom-full mb-1 whitespace-nowrap text-xs font-semibold text-[#3d2f2b] drop-shadow-sm sm:mb-1.5 sm:text-sm ${
-                          trail.name === "Ratha Beedi" ? "right-full mr-3" : "left-1/2 -translate-x-1/2"
-                        }`}
-                      >
-                        {trail.name}
-                      </span>
-                      <Image
-                        src={trail.pictogram}
-                        alt={`${trail.name} landmark`}
-                        width={180}
-                        height={180}
-                        className="h-14 w-14 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
-                      />
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+    <div className="offerings-parchment">
+      <Section
+        id="offerings"
+        as="section"
+        aria-labelledby="offerings-heading"
+        className="border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-base)] pt-24 sm:pt-32 lg:pt-36"
+      >
+        <div className="space-y-10">
+          <div className="max-w-2xl">
+            <h1 id="offerings-heading" className="text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-6xl">Offerings</h1>
           </div>
 
-          {/* DETAIL PANEL */}
-          <article className="border-t border-[var(--color-border-strong)] pt-5" aria-live="polite">
-            <div className="relative mb-8 aspect-[16/9] w-full overflow-hidden bg-[#d9c9b2]">
+          {/* Duration legend */}
+          <div className="flex flex-wrap gap-5 text-sm sm:text-base font-sans font-medium">
+            <span className="inline-flex items-center gap-2">
+              <span className="inline-block h-2 w-2 rounded-full bg-[#845f3b]" aria-hidden="true" />
+              <span className="text-[var(--color-text-muted)]">2-hour walk</span>
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <span className="inline-block h-2 w-2 rounded-full bg-[#845f3b]" aria-hidden="true" />
+              <span className="text-[var(--color-text-muted)]">6-hour excursion (transport included)</span>
+            </span>
+          </div>
+
+          <div className="grid items-start gap-8 xl:grid-cols-[minmax(0,1.15fr)_minmax(24rem,0.85fr)] xl:gap-12">
+            {/* MAP */}
+            <div className="relative w-full overflow-hidden border border-[var(--color-border-strong)] bg-[#d7bd8c]">
               <Image
-                src={activeTrailImage?.src ?? activeTrail.pictogram}
-                alt={activeTrailImage?.alt ?? ""}
-                fill
-                sizes="(min-width: 1280px) 34vw, (min-width: 1024px) 40vw, 100vw"
-                className="object-contain"
+                src="/images/illustrations/tulunadu-offering-map.png"
+                alt="Illustrated map showing the seven the koral collective walking trail locations across Tulunadu"
+                width={1536}
+                height={1024}
+                className="block h-auto w-full"
+                priority
               />
-            </div>
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h2 className="text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl">
-                  {activeTrail.name} trail
-                </h2>
-                <div className="mt-3 flex items-center gap-3">
-                  <span
-                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${activeTrail.durationHours === 2
-                      ? "bg-[#718d53]/15 text-[#3d572d]"
-                      : "bg-[#845f3b]/15 text-[#5a3828]"
-                      }`}
-                  >
-                    <span
-                      className={`h-1.5 w-1.5 rounded-full ${activeTrail.durationHours === 2 ? "bg-[#718d53]" : "bg-[#845f3b]"
+              <div className="absolute inset-0" aria-label="Walking trail locations">
+                {trails.map((trail, index) => {
+                  const isActive = index === activeIndex;
+                  return (
+                    <button
+                      key={trail.name}
+                      type="button"
+                      onClick={() => selectTrail(index)}
+                      aria-label={`Select ${trail.name} trail`}
+                      aria-pressed={isActive}
+                      className={`absolute z-10 flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 hover:scale-[1.15] focus-visible:z-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#742c2a] focus-visible:ring-offset-2 ${isActive ? "scale-[1.15] drop-shadow-md z-20" : "opacity-90 hover:opacity-100"
                         }`}
-                      aria-hidden="true"
-                    />
-                    {activeTrail.duration}
-                  </span>
-                  <span className="text-sm text-[var(--color-text-muted)]">{activeTrail.price}</span>
+                      style={trail.position}
+                    >
+                      <div className="relative flex items-center justify-center">
+                        <span
+                          className={`absolute bottom-full mb-1 whitespace-nowrap text-xs font-semibold text-[#3d2f2b] drop-shadow-sm sm:mb-1.5 sm:text-sm ${trail.name === "Ratha Beedi" ? "right-full mr-3" : "left-1/2 -translate-x-1/2"
+                            }`}
+                        >
+                          {trail.name}
+                        </span>
+                        <Image
+                          src={trail.pictogram}
+                          alt={`${trail.name} landmark`}
+                          width={180}
+                          height={180}
+                          className="h-14 w-14 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+                        />
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* DETAIL PANEL */}
+            <article className="border-t border-[var(--color-border-strong)] pt-5" aria-live="polite">
+              <div className="relative mb-8 aspect-[16/9] w-full overflow-hidden bg-[#d9c9b2]">
+                <Image
+                  src={activeTrailImage?.src ?? activeTrail.pictogram}
+                  alt={activeTrailImage?.alt ?? ""}
+                  fill
+                  sizes="(min-width: 1280px) 34vw, (min-width: 1024px) 40vw, 100vw"
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h2 className="text-4xl font-serif font-medium leading-none text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl">
+                    {activeTrail.name} trail
+                  </h2>
+                  <div className="mt-3 flex items-center gap-3">
+                    <span
+                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${activeTrail.durationHours === 2
+                        ? "bg-[#718d53]/15 text-[#3d572d]"
+                        : "bg-[#845f3b]/15 text-[#5a3828]"
+                        }`}
+                    >
+                      <span
+                        className={`h-1.5 w-1.5 rounded-full ${activeTrail.durationHours === 2 ? "bg-[#718d53]" : "bg-[#845f3b]"
+                          }`}
+                        aria-hidden="true"
+                      />
+                      {activeTrail.duration}
+                    </span>
+                    <span className="text-sm text-[var(--color-text-muted)]">{activeTrail.price}</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <p className="mt-6 text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">{activeTrail.description}</p>
+              <p className="mt-6 text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg">{activeTrail.description}</p>
 
-            <p className="mt-6 text-sm font-semibold text-[var(--color-text-primary)]">Highlights along the trail:</p>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[var(--color-text-muted)] sm:text-base">
-              {activeTrail.highlights.map((highlight) => (
-                <li key={highlight} className="flex gap-2">
-                  <span aria-hidden="true">•</span>
-                  <span>{highlight}</span>
-                </li>
-              ))}
-            </ul>
-
-            {activeTrail.note ? (
-              <p className="mt-6 text-xs italic leading-relaxed text-[var(--color-text-subtle)]">{activeTrail.note}</p>
-            ) : null}
-
-            {activeTrail.leader ? (
-              <p className="mt-6 text-sm text-[var(--color-text-muted)]">
-                Walk led by{" "}
-                <a
-                  href={activeTrail.leaderHref}
-                  className="font-bold text-[var(--color-brand-primary)] underline underline-offset-4"
-                >
-                  {activeTrail.leader}
-                </a>
-                , Architect and Teacher
-              </p>
-            ) : null}
-
-            <div className="mt-8 flex items-center justify-between border-t border-[var(--color-border-subtle)] pt-5">
-              <button
-                type="button"
-                onClick={() => selectTrail(activeIndex - 1)}
-                aria-label="Previous trail"
-                className="text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4"
-              >
-                Previous
-              </button>
-              <div className="flex items-center gap-2" aria-label="Choose a trail">
-                {trails.map((trail, index) => (
-                  <button
-                    key={trail.name}
-                    type="button"
-                    onClick={() => selectTrail(index)}
-                    aria-label={`Show ${trail.name} trail`}
-                    aria-current={index === activeIndex ? "true" : undefined}
-                    className={`h-2.5 w-2.5 rounded-full border border-[var(--color-brand-primary)] transition ${index === activeIndex
-                      ? "bg-[var(--color-brand-primary)]"
-                      : "bg-transparent opacity-45 hover:opacity-100"
-                      }`}
-                  />
+              <p className="mt-6 text-sm font-semibold text-[var(--color-text-primary)]">Highlights along the trail:</p>
+              <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[var(--color-text-muted)] sm:text-base">
+                {activeTrail.highlights.map((highlight) => (
+                  <li key={highlight} className="flex gap-2">
+                    <span aria-hidden="true">•</span>
+                    <span>{highlight}</span>
+                  </li>
                 ))}
-              </div>
-              <button
-                type="button"
-                onClick={() => selectTrail(activeIndex + 1)}
-                aria-label="Next trail"
-                className="text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4"
-              >
-                Next
-              </button>
-            </div>
-          </article>
-        </div>
+              </ul>
 
-      </div>
+              {activeTrail.note ? (
+                <p className="mt-6 text-xs italic leading-relaxed text-[var(--color-text-subtle)]">{activeTrail.note}</p>
+              ) : null}
+
+              {activeTrail.leader ? (
+                <p className="mt-6 text-sm text-[var(--color-text-muted)]">
+                  Walk led by{" "}
+                  <a
+                    href={activeTrail.leaderHref}
+                    className="font-bold text-[var(--color-brand-primary)] underline underline-offset-4"
+                  >
+                    {activeTrail.leader}
+                  </a>
+                  , Architect and Teacher
+                </p>
+              ) : null}
+
+              <div className="mt-8 flex items-center justify-between border-t border-[var(--color-border-subtle)] pt-5">
+                <button
+                  type="button"
+                  onClick={() => selectTrail(activeIndex - 1)}
+                  aria-label="Previous trail"
+                  className="text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4"
+                >
+                  Previous
+                </button>
+                <div className="flex items-center gap-2" aria-label="Choose a trail">
+                  {trails.map((trail, index) => (
+                    <button
+                      key={trail.name}
+                      type="button"
+                      onClick={() => selectTrail(index)}
+                      aria-label={`Show ${trail.name} trail`}
+                      aria-current={index === activeIndex ? "true" : undefined}
+                      className={`h-2.5 w-2.5 rounded-full border border-[var(--color-brand-primary)] transition ${index === activeIndex
+                        ? "bg-[var(--color-brand-primary)]"
+                        : "bg-transparent opacity-45 hover:opacity-100"
+                        }`}
+                    />
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => selectTrail(activeIndex + 1)}
+                  aria-label="Next trail"
+                  className="text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4"
+                >
+                  Next
+                </button>
+              </div>
+            </article>
+          </div>
+
+        </div>
       </Section>
       <Faqs />
-    </>
+    </div>
   );
 }

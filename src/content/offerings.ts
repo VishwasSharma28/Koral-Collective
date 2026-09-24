@@ -11,9 +11,9 @@ export const offerings: Offering[] = [
       "Food, gathering, and café-centered cultural experiences.",
     experienceIds: [],
     seo: {
-      title: "Café Collective | Koral Collective",
+      title: "Café Collective | the koral collective",
       description:
-        "Explore café-centered cultural gathering experiences with Koral Collective.",
+        "Explore café-centered cultural gathering experiences with the koral collective.",
     },
   },
 
@@ -36,7 +36,7 @@ export const offerings: Offering[] = [
       "coastal-tulunadu",
     ],
     seo: {
-      title: "Walking Trails Across Tulunadu | Koral Collective",
+      title: "Walking Trails Across Tulunadu | the koral collective",
       description:
         "Explore curated walking trails across Udupi and Dakshina Kannada, connecting heritage, culture, architecture, food, and living traditions.",
     },
