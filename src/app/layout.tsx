@@ -14,6 +14,12 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.tagline,
+
+  icons: {
+    icon: "/images/branding/koral-collective-logo-transparent.png",
+    shortcut: "/images/branding/koral-collective-logo-transparent.png",
+    apple: "/images/branding/koral-collective-logo-transparent.png",
+  },
 };
 
 const fontDisplay = EB_Garamond({
@@ -30,10 +36,16 @@ const fontBody = Source_Sans_3({
   display: "swap",
 });
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`min-h-screen antialiased ${fontDisplay.variable} ${fontBody.variable}`}>
+      <body
+        className={`min-h-screen antialiased ${fontDisplay.variable} ${fontBody.variable}`}
+      >
         <SkipToMain />
         <SiteHeader />
         <main id="main-content">{children}</main>
