@@ -172,16 +172,16 @@ export const experiences: Experience[] = [
   },
 
   {
-    id: "moodabidri",
-    slug: "moodabidri",
+    id: "moodbidri",
+    slug: "moodbidri",
     offeringId: "half-day-experience",
 
-    title: "Moodabidri",
+    title: "Moodbidri",
     teaser:
       "A Jain heritage town layered with sacred stone, royal patronage, literature, and living tradition.",
 
     description:
-      "From ancient Jain shrines to the Thousand Pillar Temple, Moodabidri reveals the architectural and cultural depth of Tulunadu's Jain heritage.",
+      "From ancient Jain shrines to the Thousand Pillar Temple, Moodbidri reveals the architectural and cultural depth of Tulunadu's Jain heritage.",
 
     duration: "6 hours",
     format: "Walking trail",
@@ -197,19 +197,19 @@ export const experiences: Experience[] = [
     map: {
       x: 72,
       y: 74,
-      label: "Moodabidri",
+      label: "Moodbidri",
       icon: `${MAP_LOGO_PATH}/IMG_4272.png`,
     },
 
     image: {
       src: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789392645/Moodbidri_website_1.jpg",
-      alt: "Moodabidri Jain heritage trail",
+      alt: "Moodbidri Jain heritage trail",
     },
 
     seo: {
-      title: "Moodabidri Heritage Walking Trail | the koral collective",
+      title: "Moodbidri Heritage Walking Trail | the koral collective",
       description:
-        "Explore Moodabidri's Jain temples, architecture, royal history, and literary traditions with the koral collective.",
+        "Explore Moodbidri's Jain temples, architecture, royal history, and literary traditions with the koral collective.",
     },
   },
 

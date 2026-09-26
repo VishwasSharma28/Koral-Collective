@@ -6,7 +6,7 @@ const slugs = [
   "kallianpur-historical",
   "barkur",
   "basrur",
-  "moodabidri",
+  "moodbidri",
 ];
 
 export function generateStaticParams() {

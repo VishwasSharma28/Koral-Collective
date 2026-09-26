@@ -104,7 +104,7 @@ const trails: Trail[] = [
     position: { left: "45%", top: "68%" },
   },
   {
-    name: "Moodabidri",
+    name: "Moodbidri",
     duration: "6 hours",
     durationHours: 6,
     price: "₹5000 or $75/per person",

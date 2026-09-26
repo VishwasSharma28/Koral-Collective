@@ -12,7 +12,7 @@ const showcaseOrder = [
   "basrur",
   "ratha-beedi",
   "shirva",
-  "moodabidri",
+  "moodbidri",
   "karkala",
 ];
 

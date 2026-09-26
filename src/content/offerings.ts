@@ -30,7 +30,7 @@ export const offerings: Offering[] = [
       "kallianpur",
       "barkur",
       "basrur",
-      "moodabidri",
+      "moodbidri",
       "karkala",
       "shirva",
       "coastal-tulunadu",

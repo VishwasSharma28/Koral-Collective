@@ -124,12 +124,12 @@ const trails: Trail[] = [
     symbol: "□",
   },
   {
-    id: "moodabidri",
+    id: "moodbidri",
     number: "06",
-    name: "Moodabidri Trail",
-    shortName: "Moodabidri",
+    name: "Moodbidri Trail",
+    shortName: "Moodbidri",
     description:
-      "Deriving its name from the eastern bamboo groves that once covered the region, Moodabidri is an ancient heritage town widely revered as the Jain Kashi of the South.",
+      "Deriving its name from the eastern bamboo groves that once covered the region, Moodbidri is an ancient heritage town widely revered as the Jain Kashi of the South.",
     highlights: [
       "Saavira Kambada Basadi",
       "Historic Jain shrines",
