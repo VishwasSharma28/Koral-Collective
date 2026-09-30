@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Faqs } from "@/components/home/Faqs";
 import { Section } from "@/components/ui/Section";
+import { OfferingControls } from "@/components/ui/OfferingControls";
 import { getAllExperiences } from "@/content";
 
 type Trail = {
@@ -171,13 +172,13 @@ export function OfferingExperience() {
           </div>
 
           {/* Duration legend */}
-          <div className="flex flex-wrap gap-5 text-sm sm:text-base font-sans font-medium">
-            <span className="inline-flex items-center gap-2">
-              <span className="inline-block h-2 w-2 rounded-full bg-[#845f3b]" aria-hidden="true" />
+          <div className="flex flex-wrap gap-6 font-sans text-base font-medium sm:text-lg">
+            <span className="inline-flex items-center gap-2.5">
+              <span className="inline-block h-3.5 w-3.5 rounded-full bg-[var(--color-duration-short)]" aria-hidden="true" />
               <span className="text-[var(--color-text-muted)]">2-hour walk</span>
             </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="inline-block h-2 w-2 rounded-full bg-[#845f3b]" aria-hidden="true" />
+            <span className="inline-flex items-center gap-2.5">
+              <span className="inline-block h-3.5 w-3.5 rounded-full bg-[var(--color-duration-long)]" aria-hidden="true" />
               <span className="text-[var(--color-text-muted)]">6-hour excursion (transport included)</span>
             </span>
           </div>
@@ -247,12 +248,12 @@ export function OfferingExperience() {
                   <div className="mt-3 flex items-center gap-3">
                     <span
                       className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium ${activeTrail.durationHours === 2
-                        ? "bg-[#718d53]/15 text-[#3d572d]"
-                        : "bg-[#845f3b]/15 text-[#5a3828]"
+                        ? "bg-[var(--color-duration-short)]/30 text-[#5c571e]"
+                        : "bg-[var(--color-duration-long)]/20 text-[#365029]"
                         }`}
                     >
                       <span
-                        className={`h-1.5 w-1.5 rounded-full ${activeTrail.durationHours === 2 ? "bg-[#718d53]" : "bg-[#845f3b]"
+                        className={`h-1.5 w-1.5 rounded-full ${activeTrail.durationHours === 2 ? "bg-[var(--color-duration-short)]" : "bg-[var(--color-duration-long)]"
                           }`}
                         aria-hidden="true"
                       />
@@ -292,39 +293,7 @@ export function OfferingExperience() {
                 </p>
               ) : null}
 
-              <div className="mt-8 flex items-center justify-between border-t border-[var(--color-border-subtle)] pt-5">
-                <button
-                  type="button"
-                  onClick={() => selectTrail(activeIndex - 1)}
-                  aria-label="Previous trail"
-                  className="text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4"
-                >
-                  Previous
-                </button>
-                <div className="flex items-center gap-2" aria-label="Choose a trail">
-                  {trails.map((trail, index) => (
-                    <button
-                      key={trail.name}
-                      type="button"
-                      onClick={() => selectTrail(index)}
-                      aria-label={`Show ${trail.name} trail`}
-                      aria-current={index === activeIndex ? "true" : undefined}
-                      className={`h-2.5 w-2.5 rounded-full border border-[var(--color-brand-primary)] transition ${index === activeIndex
-                        ? "bg-[var(--color-brand-primary)]"
-                        : "bg-transparent opacity-45 hover:opacity-100"
-                        }`}
-                    />
-                  ))}
-                </div>
-                <button
-                  type="button"
-                  onClick={() => selectTrail(activeIndex + 1)}
-                  aria-label="Next trail"
-                  className="text-sm font-medium text-[var(--color-brand-primary)] underline underline-offset-4"
-                >
-                  Next
-                </button>
-              </div>
+              <OfferingControls activeIndex={activeIndex} count={trails.length} onSelect={selectTrail} />
             </article>
           </div>
 

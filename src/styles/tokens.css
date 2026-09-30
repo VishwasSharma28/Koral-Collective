@@ -19,6 +19,10 @@
   --color-border-subtle: #D5BFA9;
   --color-border-strong: #B28A45;
 
+  /* Offering durations */
+  --color-duration-short: #CFC560;
+  --color-duration-long: #506D3A;
+
   /* Typography Stack Tokens (Overridden by Next.js fonts) */
   --font-display: var(--font-display);
   --font-body: var(--font-body);

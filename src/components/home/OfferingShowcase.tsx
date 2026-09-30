@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 import { getAllExperiences } from "@/content";
+import { OfferingControls } from "@/components/ui/OfferingControls";
 
 const showcaseOrder = [
   "kallianpur",
@@ -145,18 +146,7 @@ export function OfferingShowcase() {
           ))}
         </div>
 
-        <div className="mt-1 flex justify-center gap-2" aria-hidden="true">
-          {experiences.map((experience, index) => (
-            <span
-              key={experience.id}
-              className={`h-1 rounded-full transition-all ${
-                activeIndex === index
-                  ? "w-8 bg-[var(--color-brand-primary)]"
-                  : "w-2 bg-[var(--color-border-strong)]"
-              }`}
-            />
-          ))}
-        </div>
+        <OfferingControls activeIndex={activeIndex} count={experiences.length} onSelect={scrollToCard} />
       </div>
     </section>
   );

@@ -10,7 +10,7 @@ type ContainerProps = {
 
 const sizeClasses = {
   narrow: "max-w-4xl",
-  default: "max-w-6xl",
+  default: "max-w-7xl",
   wide: "max-w-7xl",
   full: "max-w-full",
 };

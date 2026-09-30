@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function HeroStage() {
   return (
-    <div className="relative w-full overflow-hidden bg-[var(--color-bg-base)] flex flex-col justify-center">
+    <div className="relative flex w-full flex-col justify-center overflow-hidden bg-[var(--color-bg-base)] pt-24 md:pt-0">
 
       {/* Mobile background (full aspect ratio preserved) */}
       <div className="block sm:hidden w-full leading-none z-0">
@@ -21,7 +21,7 @@ export function HeroStage() {
       </div>
 
       {/* Desktop background (full aspect ratio preserved) */}
-      <div className="hidden sm:block relative w-full leading-none z-0">
+      <div className="relative z-0 hidden w-full leading-none sm:block lg:-translate-x-[4%] lg:w-[108%] lg:max-w-none">
         <Image
           src="/images/tulunadu-parchment-panorama.png"
           alt=""
@@ -64,8 +64,6 @@ export function HeroStage() {
         </div>
       </div>
 
-      {/* Fade to page bg at bottom */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[var(--color-bg-base)] to-transparent z-20" />
     </div>
   );
 }

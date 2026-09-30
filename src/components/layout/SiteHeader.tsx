@@ -29,7 +29,7 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed left-0 right-0 top-0 z-50 transition-colors duration-300",
-        isHome && !scrolled ? "bg-transparent" : "bg-[var(--color-bg-base)] shadow-[0_1px_2px_rgba(0,0,0,0.05)]",
+        isHome && !scrolled && !mobileMenuOpen ? "bg-transparent" : "bg-[var(--color-bg-base)] shadow-[0_1px_2px_rgba(0,0,0,0.05)]",
       )}
     >
       <Container size="full">
