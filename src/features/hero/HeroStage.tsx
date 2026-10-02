@@ -25,8 +25,8 @@ export function HeroStage() {
         <Image
           src="/images/tulunadu-desktop-hero.png"
           alt=""
-          width={1999}
-          height={711}
+          width={2000}
+          height={1472}
           className="block h-auto w-full object-contain"
           priority
           aria-hidden="true"
