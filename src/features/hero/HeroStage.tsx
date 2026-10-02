@@ -34,14 +34,14 @@ export function HeroStage() {
       </div>
 
       {/* Primary hero content */}
-      <div className="absolute inset-x-0 top-[29%] z-10 flex items-start px-4 md:top-[10%] md:px-10 lg:px-16 xl:px-24">
+      <div className="absolute inset-x-0 top-[29%] z-10 flex items-start px-4 md:top-[clamp(14rem,32%,20rem)] md:px-10 lg:top-[clamp(20rem,36%,32rem)] lg:px-16 xl:px-24">
         <div className="mx-auto w-full max-w-7xl md:py-0">
-          <div className="max-w-2xl space-y-4 md:space-y-3 lg:space-y-4 xl:space-y-8">
+          <div className="max-w-2xl space-y-4 md:space-y-5 lg:max-w-[52rem] lg:space-y-6">
             <div>
-              <h1 className="font-serif text-[clamp(1.5rem,7.4vw,1.9rem)] font-semibold leading-[1.08] text-[#160d08] [text-shadow:0_1px_0_rgba(247,237,219,0.8)] md:text-3xl md:leading-snug lg:text-4xl xl:text-5xl">
+              <h1 className="max-w-[43rem] font-serif text-[clamp(1.5rem,7.4vw,1.9rem)] font-semibold leading-[1.08] text-[#160d08] [text-shadow:0_1px_0_rgba(247,237,219,0.8)] md:text-[52px] md:leading-[1.1] lg:max-w-[52rem] lg:text-[56px] xl:text-[60px]">
                 Walk the textures of Tulunadu threaded through time
               </h1>
-              <p className="mt-2 max-w-2xl font-sans text-[clamp(0.7rem,3.5vw,0.9rem)] font-medium leading-[1.3] text-[#28150d] md:mt-3 md:text-sm md:leading-relaxed lg:mt-4 lg:text-base xl:mt-5 xl:text-lg">
+              <p className="mt-2 max-w-2xl font-sans text-[clamp(0.7rem,3.5vw,0.9rem)] font-medium leading-[1.3] text-[#28150d] md:mt-4 md:max-w-[38rem] md:text-[17px] md:leading-relaxed lg:mt-5 lg:text-[18px]">
                 For those who travel in unhurried grace, we invite you to experience a Tulunadu rarely seen, through immersive walking tours led by historians, archaeologists, and architects.
               </p>
             </div>
