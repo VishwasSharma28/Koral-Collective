@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState, type PointerEvent, type ReactNode } from "react";
 
 type Footprint = {
     id: number;
@@ -85,7 +85,7 @@ function FootprintShape({
     );
 }
 
-export function FootstepTrail() {
+export function FootstepTrail({ children }: { children: ReactNode }) {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const lastPosition = useRef<{
@@ -99,155 +99,106 @@ export function FootstepTrail() {
 
     const [footprints, setFootprints] = useState<Footprint[]>([]);
 
-    useEffect(() => {
-        const handleMouseMove = (event: MouseEvent) => {
-            const container = containerRef.current;
+    const handlePointerMove = (event: PointerEvent<HTMLDivElement>) => {
+        const container = containerRef.current;
+        if (!container) return;
 
-            if (!container) return;
+        const rect = container.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
 
-            const rect = container.getBoundingClientRect();
-
-            const mouseX = event.clientX;
-            const mouseY = event.clientY;
-
-            // Only create footprints inside the trail area.
-            if (
-                mouseX < rect.left ||
-                mouseX > rect.right ||
-                mouseY < rect.top ||
-                mouseY > rect.bottom
-            ) {
-                lastPosition.current = null;
-                return;
-            }
-
-            const x = mouseX - rect.left;
-            const y = mouseY - rect.top;
-
-            if (!lastPosition.current) {
-                lastPosition.current = { x, y };
-                return;
-            }
-
-            const dx = x - lastPosition.current.x;
-            const dy = y - lastPosition.current.y;
-
-            const distance = Math.hypot(dx, dy);
-
-            if (distance < STEP_DISTANCE) {
-                return;
-            }
-
-            const angle = Math.atan2(dy, dx);
-
-            const perpendicularX = -Math.sin(angle);
-            const perpendicularY = Math.cos(angle);
-
-            const side =
-                nextFoot.current === "left" ? -1 : 1;
-
-            const footX =
-                x + perpendicularX * SIDE_DISTANCE * side;
-
-            const footY =
-                y + perpendicularY * SIDE_DISTANCE * side;
-
-            const footprint: Footprint = {
-                id: idCounter.current++,
-                x: footX,
-                y: footY,
-                rotation: angle * (180 / Math.PI) + 90,
-                side: nextFoot.current,
-            };
-
-            setFootprints((current) => [
-                ...current.slice(-(MAX_FOOTPRINTS - 1)),
-                footprint,
-            ]);
-
+        if (!lastPosition.current) {
             lastPosition.current = { x, y };
+            return;
+        }
 
-            nextFoot.current =
-                nextFoot.current === "left"
-                    ? "right"
-                    : "left";
+        const dx = x - lastPosition.current.x;
+        const dy = y - lastPosition.current.y;
+        const distance = Math.hypot(dx, dy);
+
+        if (distance < STEP_DISTANCE) return;
+
+        const angle = Math.atan2(dy, dx);
+        const perpendicularX = -Math.sin(angle);
+        const perpendicularY = Math.cos(angle);
+        const side = nextFoot.current === "left" ? -1 : 1;
+
+        const footprint: Footprint = {
+            id: idCounter.current++,
+            x: x + perpendicularX * SIDE_DISTANCE * side,
+            y: y + perpendicularY * SIDE_DISTANCE * side,
+            rotation: angle * (180 / Math.PI) + 90,
+            side: nextFoot.current,
         };
 
-        const resetPosition = () => {
-            lastPosition.current = null;
-        };
+        setFootprints((current) => [
+            ...current.slice(-(MAX_FOOTPRINTS - 1)),
+            footprint,
+        ]);
 
-        window.addEventListener(
-            "mousemove",
-            handleMouseMove,
-            { passive: true }
-        );
+        lastPosition.current = { x, y };
+        nextFoot.current = nextFoot.current === "left" ? "right" : "left";
+    };
 
-        window.addEventListener(
-            "blur",
-            resetPosition
-        );
-
-        return () => {
-            window.removeEventListener(
-                "mousemove",
-                handleMouseMove
-            );
-
-            window.removeEventListener(
-                "blur",
-                resetPosition
-            );
-        };
-    }, []);
+    const handlePointerLeave = () => {
+        lastPosition.current = null;
+        setFootprints([]);
+    };
 
     return (
         <div
             ref={containerRef}
-            className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
-            aria-hidden="true"
+            className="relative isolate overflow-hidden"
+            onPointerMove={handlePointerMove}
+            onPointerLeave={handlePointerLeave}
         >
-            <AnimatePresence>
-                {footprints.map((footprint) => (
-                    <motion.div
-                        key={footprint.id}
-                        className="absolute"
-                        style={{
-                            left: footprint.x,
-                            top: footprint.y,
-                            width: 20,
-                            height: 42,
-                            transformOrigin: "center",
-                        }}
-                        initial={{
-                            opacity: 0,
-                            scale: 0.75,
-                            rotate: footprint.rotation,
-                        }}
-                        animate={{
-                            opacity: [0, 0.62, 0.38, 0],
-                            scale: [0.75, 1, 1, 0.94],
-                        }}
-                        exit={{
-                            opacity: 0,
-                        }}
-                        transition={{
-                            duration: 0.75,
-                            ease: "easeOut",
-                            times: [0, 0.12, 0.55, 1],
-                        }}
-                        onAnimationComplete={() => {
-                            setFootprints((current) =>
-                                current.filter(
-                                    (item) => item.id !== footprint.id
-                                )
-                            );
-                        }}
-                    >
-                        <FootprintShape side={footprint.side} />
-                    </motion.div>
-                ))}
-            </AnimatePresence>
+            <div
+                className="pointer-events-none absolute inset-0 z-0"
+                aria-hidden="true"
+            >
+                <AnimatePresence>
+                    {footprints.map((footprint) => (
+                        <motion.div
+                            key={footprint.id}
+                            className="absolute"
+                            style={{
+                                left: footprint.x,
+                                top: footprint.y,
+                                width: 20,
+                                height: 42,
+                                transformOrigin: "center",
+                            }}
+                            initial={{
+                                opacity: 0,
+                                scale: 0.75,
+                                rotate: footprint.rotation,
+                            }}
+                            animate={{
+                                opacity: [0, 0.62, 0.38, 0],
+                                scale: [0.75, 1, 1, 0.94],
+                            }}
+                            exit={{
+                                opacity: 0,
+                            }}
+                            transition={{
+                                duration: 0.75,
+                                ease: "easeOut",
+                                times: [0, 0.12, 0.55, 1],
+                            }}
+                            onAnimationComplete={() => {
+                                setFootprints((current) =>
+                                    current.filter(
+                                        (item) => item.id !== footprint.id
+                                    )
+                                );
+                            }}
+                        >
+                            <FootprintShape side={footprint.side} />
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
+            </div>
+            <div className="relative z-10">{children}</div>
         </div>
     );
 }
