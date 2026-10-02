@@ -36,8 +36,8 @@ const teamImages: Record<string, string> = {
   "Thushar Yadav":
     "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793424/Thushar_1.jpg",
 
-  // Handles the spelling if the content file uses "Tushar".
-  "Tushar Yadav":
+  // Existing portrait for Thushar.
+  Thushar:
     "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789390215/WhatsApp_Image_2026-09-14_at_12.56.40_PM.jpg",
 
   "Shravya Hegde":
