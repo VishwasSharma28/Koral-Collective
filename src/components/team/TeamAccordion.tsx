@@ -9,48 +9,48 @@ type TeamAccordionProps = {
 };
 
 /**
- * Team member portraits hosted on Cloudinary.
+ * Team member portraits hosted on ImageKit.
  *
  * We map by name so the existing content data does not need
  * to be modified just to add the images.
  */
 const teamImages: Record<string, string> = {
   "Shreyas Kolpe":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793460/Shreyas.jpg",
+    "https://ik.imagekit.io/abr6j2ge8/team/Shreyas.jpg?updatedAt=1791037557910",
 
   "Sharvani Bhat":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793430/Sharvani.jpg.jpg",
+    "https://ik.imagekit.io/abr6j2ge8/team/Sharvani.jpg.jpeg?updatedAt=1791037557226",
 
   "Sriram K":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793425/Sriram.png",
+    "https://ik.imagekit.io/abr6j2ge8/team/Sriram.png?updatedAt=1791037553023",
 
   Vishwas:
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793425/Vishwas.jpg",
-
-  "Shridhar Bhat":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793424/Shridhar.jpg",
+    "https://ik.imagekit.io/abr6j2ge8/team/Vishwas.jpeg?updatedAt=1791037552849",
 
   "Murugeshi T":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793424/Murugeshi_bnw.jpg",
-
-  "Thushar Yadav":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793424/Thushar_1.jpg",
+    "https://ik.imagekit.io/abr6j2ge8/team/Murugeshi%20bnw.jpg?updatedAt=1791037557468",
 
   // Existing portrait for Thushar.
   Thushar:
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789390215/WhatsApp_Image_2026-09-14_at_12.56.40_PM.jpg",
+    "https://ik.imagekit.io/abr6j2ge8/team/thushar.jpeg?updatedAt=1791038141714",
 
   "Shravya Hegde":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793422/Shravya.jpg.jpg",
+    "https://ik.imagekit.io/abr6j2ge8/team/Shravya.jpg.jpeg?updatedAt=1791037553081",
 
   "Raisah Dilkush":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793422/Raisah.jpg",
+    "https://ik.imagekit.io/abr6j2ge8/team/Raisah.jpeg?updatedAt=1791037553094",
 
   "Meghna Rohit Amin":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793422/Meghna.png",
+    "https://ik.imagekit.io/abr6j2ge8/team/Meghna.png?updatedAt=1791037552936",
 
   "Aparna Ashokan":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793422/Aparna.jpg"
+    "https://ik.imagekit.io/abr6j2ge8/team/Aparna.jpeg?updatedAt=1791037552805",
+
+  "Aaina Amin":
+    "https://ik.imagekit.io/abr6j2ge8/team/Aaina_Amin.jpg?updatedAt=1791037553082",
+
+  "Laxmi Priya":
+    "https://ik.imagekit.io/abr6j2ge8/team/Laxmi.jpg?updatedAt=1791037552822",
 };
 
 export function TeamAccordion({ groups }: TeamAccordionProps) {

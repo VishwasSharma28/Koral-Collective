@@ -36,7 +36,7 @@ const trails: Trail[] = [
       "Vasco da Gama and the Portuguese connection",
       "The Church of Nossa Senhora de Milagres",
     ],
-    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391228/Church_details.png",
+    pictogram: "https://ik.imagekit.io/abr6j2ge8/map-icons/Kallianpur_with%20name.png?updatedAt=1791037663161",
     position: { left: "34%", top: "45%" },
   },
   {
@@ -52,7 +52,7 @@ const trails: Trail[] = [
       "Generations of shops, eateries, and everyday practice",
       "The buildings and facades that hold the temple town’s memory",
     ],
-    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391223/Ratha_details.png",
+    pictogram: "https://ik.imagekit.io/abr6j2ge8/map-icons/Rathabeedi_with%20name.png?updatedAt=1791037663165",
     position: { left: "34%", top: "56%" },
   },
   {
@@ -69,7 +69,7 @@ const trails: Trail[] = [
       "The Jain Temple Complex (Kathale Basadi)",
     ],
     note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
-    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391231/Barkur_details.png",
+    pictogram: "https://ik.imagekit.io/abr6j2ge8/map-icons/Barkur_with%20name.png?updatedAt=1791037663439",
     position: { left: "35%", top: "32%" },
   },
   {
@@ -85,7 +85,7 @@ const trails: Trail[] = [
       "The Shree Mahatobar Mahalingeshwara Temple",
     ],
     note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
-    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391230/Bull_details.png",
+    pictogram: "https://ik.imagekit.io/abr6j2ge8/map-icons/Basrur_with%20name.png?updatedAt=1791037662829",
     position: { left: "30%", top: "15%" },
   },
   {
@@ -101,7 +101,7 @@ const trails: Trail[] = [
       "The setting of the Siri Paddana (folk epic)",
     ],
     note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
-    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391221/Shirva_details.png",
+    pictogram: "https://ik.imagekit.io/abr6j2ge8/map-icons/Shirva_with%20name.png?updatedAt=1791037662884",
     position: { left: "45%", top: "68%" },
   },
   {
@@ -117,7 +117,7 @@ const trails: Trail[] = [
       "Home to ancient literary traditions such as the Dhavala palm-leaf manuscripts",
     ],
     note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
-    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391225/Moodbidri_details.png",
+    pictogram: "https://ik.imagekit.io/abr6j2ge8/map-icons/Moodbidri_with%20name.png?updatedAt=1791037662938",
     position: { left: "78%", top: "85%" },
   },
   {
@@ -134,7 +134,7 @@ const trails: Trail[] = [
       "The bazaars dotted with shops run by GSB traders",
     ],
     note: "*Transport by chartered bus is provided between stops. Walking is required at each location.",
-    pictogram: "https://res.cloudinary.com/ev7y5xh0/image/upload/v1789391227/Karkala_details.png",
+    pictogram: "https://ik.imagekit.io/abr6j2ge8/map-icons/Karkala_with%20name%20.png?updatedAt=1791037663011",
     position: { left: "75%", top: "60%" },
   },
 ];
@@ -209,18 +209,12 @@ export function OfferingExperience() {
                       style={trail.position}
                     >
                       <div className="relative flex items-center justify-center">
-                        <span
-                          className={`absolute bottom-full mb-1 whitespace-nowrap text-xs font-semibold text-[#3d2f2b] drop-shadow-sm sm:mb-1.5 sm:text-sm ${trail.name === "Ratha Beedi" ? "right-full mr-3" : "left-1/2 -translate-x-1/2"
-                            }`}
-                        >
-                          {trail.name}
-                        </span>
                         <Image
                           src={trail.pictogram}
-                          alt={`${trail.name} landmark`}
+                          alt=""
                           width={180}
                           height={180}
-                          className="h-14 w-14 object-contain sm:h-20 sm:w-20 md:h-24 md:w-24"
+                          className="h-11 w-11 object-contain sm:h-12 sm:w-12 md:h-14 md:w-14"
                         />
                       </div>
                     </button>
