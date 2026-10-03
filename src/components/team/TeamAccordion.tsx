@@ -43,9 +43,6 @@ const teamImages: Record<string, string> = {
   "Shravya Hegde":
     "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793422/Shravya.jpg.jpg",
 
-  "Nitesh S Anchan":
-    "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793422/Nitesh.png",
-
   "Raisah Dilkush":
     "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793422/Raisah.jpg",
 

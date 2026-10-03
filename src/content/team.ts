@@ -58,6 +58,13 @@ export const teamContent: TeamContent = {
       title: "Back office",
       members: [
         {
+          id: "aaina-amin",
+          name: "Aaina Amin",
+          role: "Design Consultant",
+          bio: "Aaina is a researcher and designer interested in how people, places, and systems shape the everyday. She has worked across technology, advocacy, and advertising.",
+          image: undefined,
+        },
+        {
           id: "aparna-ashokan",
           name: "Aparna Ashokan",
           role: "Finance Consultant",
@@ -65,10 +72,10 @@ export const teamContent: TeamContent = {
           image: undefined,
         },
         {
-          id: "nitesh-s-anchan",
-          name: "Nitesh S Anchan",
-          role: "Anthropology Researcher | Teacher",
-          bio: "Nitesh researches and documents the living cultures of Tulunadu, contributing to a deeper understanding of Tulu society. He is also a philosophy teacher.",
+          id: "laxmi-priya",
+          name: "Laxmi Priya",
+          role: "Social Media Consultant",
+          bio: "Laxmi has been performing and teaching theatre since 2011 and has been a part of national and international ensembles. She also works as a facilitator and digital marketer.",
           image: undefined,
         },
         {
@@ -97,20 +104,6 @@ export const teamContent: TeamContent = {
           name: "Vishwas",
           role: "Full-stack Developer",
           bio: "Vishwas is a Computer Science student with a deep curiosity for how things are built. He brings design flair and technical ambition to the team’s digital presence.",
-          image: undefined,
-        },
-        {
-          id: "aaina-amin",
-          name: "Aaina Amin",
-          role: "Design Consultant",
-          bio: "Aaina is a researcher and designer interested in how people, places, and systems shape the everyday. She has worked across technology, advocacy, and advertising.",
-          image: undefined,
-        },
-        {
-          id: "laxmi-priya",
-          name: "Laxmi Priya",
-          role: "Social Media Consultant",
-          bio: "Laxmi has been performing and teaching theatre since 2011 and has been a part of national and international ensembles. She also works as a facilitator and digital marketer.",
           image: undefined,
         },
       ],
