@@ -24,7 +24,7 @@ const teamImages: Record<string, string> = {
   "Sriram K":
     "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793425/Sriram.png",
 
-  "Vishwas Sharma":
+  Vishwas:
     "https://res.cloudinary.com/ev7y5xh0/image/upload/v1788793425/Vishwas.jpg",
 
   "Shridhar Bhat":
